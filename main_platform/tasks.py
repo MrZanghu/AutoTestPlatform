@@ -9,8 +9,7 @@ from . import viewsParams as vp
 from BeautifulReport import BeautifulReport
 from django.contrib.auth.models import User
 from main_platform.celery import ex_cases_app
-from utils.process_data import request_process, \
-    get_var_from_response, preprocess_request_data,zip_file
+from utils.process_data import request_process,get_var_from_response, preprocess_request_data,zip_file
 
 
 
@@ -218,7 +217,6 @@ def case_task(test_case_list:list, server_address, user):
     :param user: 执行用户
     :return:
     '''
-    time.sleep(1)
     global_key= "ex_time_" + str(int(time.time() * 100000)) # 系统里唯一，目的为每次执行都独立
     os.environ[global_key]= "{}" # 总全局变量
     list_open= []
@@ -263,7 +261,6 @@ def process_xls(up_times,owner,file_names):
     :param file_names:
     :return:
     '''
-    time.sleep(1)
 
     file= models.UpLoadsCaseTemplate.objects.\
         filter(uptimes= up_times,owner= owner).first()
@@ -401,7 +398,6 @@ def suite_task(test_suite_list:list,server_address, user):
     :param user: 执行用户
     :return:
     '''
-    time.sleep(1)
     list_dict= {} # {"":[],"":[]}
     zipfiles= [] # 压缩集合报告文件
     suites_time_= str(time.strftime("%Y_%m_%d_%H:%M:%S", time.localtime(time.time())))

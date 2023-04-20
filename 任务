@@ -1,4 +1,11 @@
-1.加入定时执行任务
+1.加入定时执行任务 前端加入时间
 2.创建项目、模块、集合
 3.用户权限控制
 4.发送用例执行结果邮件
+
+
+sudo /usr/local/bin/redis-server
+celery -A main_platform  worker --loglevel=error
+python3 manage.py runserver 0.0.0.0:8000
+
+https://juejin.cn/post/6844903885400702989

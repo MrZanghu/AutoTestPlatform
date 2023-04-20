@@ -15,13 +15,14 @@ from django.contrib.auth.decorators import login_required
 from main_platform.models import Project, Module, TestCase,\
     TestSuite, AddCaseIntoSuite, Server, UpLoadsCaseTemplate, \
     TestCaseExecuteResult,TestExecute,TestSuiteExecuteRecord,TestSuiteTestCaseExecuteRecord
+from apscheduler.schedulers.background import BackgroundScheduler
+from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
 
 
-'''
-sudo /usr/local/bin/redis-server
-celery -A main_platform  worker --loglevel=error
-python3 manage.py runserver 0.0.0.0:8000
-'''
+
+scheduler= BackgroundScheduler(timezone='Asia/Shanghai') # 实例化调度器
+scheduler.add_jobstore(DjangoJobStore(), 'default')
+# django_apscheduler_djangojobexecution没有存记录，不知原因
 
 
 def get_test(request):
@@ -149,6 +150,45 @@ def get_server_address(env):
         return None
 
 
+def register_jobs(lists,envs,username,types,run_date):
+    '''
+    执行用例or集合，进行定时任务注册
+    :param lists:
+    :param envs:
+    :param username:
+    :param type: 0->用例，1->集合
+    :param run_date:
+    :return:
+    '''
+    scheduler.add_job(do_task_time,"date",run_date= "2023-04-20 16:41:00",args= [lists,envs,username,types])
+
+
+def do_task_time(lists,envs,username,types):
+    '''
+    执行用例or集合的定时任务
+    :param lists:
+    :param envs:
+    :param username:
+    :param types: type: 0->用例，1->集合
+    :return:
+    '''
+    if lists:
+        test_list= [int(x) for x in lists]
+        test_list.sort()  # 将id转化成int后排序
+        server_address= get_server_address(envs)
+        if not server_address:
+            return JsonResponse({"code": 404, "msg": "提交的运行环境为空，请选择环境后再提交！"})
+        if types== 0:
+            print("######### 已经获取到用例，开始进行批量执行 #########")
+            case_task.delay(test_list, server_address, username)
+        else:
+            print("######### 已经获取到集合，开始进行批量执行 #########")
+            suite_task.delay(test_list, server_address, username)
+    else:
+        print("######### 未获取到用例or集合 #########")
+        return JsonResponse({"code": 404, "msg": "提交的测试用例or集合为空！"})
+
+
 @login_required
 def index(request):
     '''主页'''
@@ -241,22 +281,10 @@ def test_case(request):
             data["case_name"]= case_name
             return render(request, "test_case.html", data)
         else:
+            env= request.POST.get("env")
             test_case_list= request.POST.getlist("testcases_list")
-            if test_case_list:
-                test_case_list= [int(x) for x in test_case_list]
-                test_case_list.sort() # 将id转化成int后排序
-                env= request.POST.get("env")
-                server_address= get_server_address(env)
-                if not server_address:
-                    return JsonResponse({"code":404,"msg":"提交的运行环境为空，请选择环境后再提交！"})
-                print("######### 已经获取到用例，开始进行批量执行 #########")
-
-
-                case_task.delay(test_case_list,server_address,request.user.username)
-                return redirect(reverse("main_platform:test_execute"))
-            else:
-                print("######### 未获取到用例 #########")
-                return JsonResponse({"code":404,"msg":"提交的测试用例为空，请选择用例后再提交！"})
+            register_jobs(test_case_list,env,request.user.username,0,"2023-04-19 17:35:00")
+            return redirect(reverse("main_platform:test_execute"))
 
 
 @login_required
@@ -516,21 +544,10 @@ def test_suite(request):
             data["suite_name"]= suite_name
             return render(request, "test_suite.html", data)
         else:
+            env= request.POST.get("env")
             test_suite_list= request.POST.getlist("testsuite_list")
-            if test_suite_list:
-                test_suite_list= [int(x) for x in test_suite_list]
-                test_suite_list.sort()  # 将id转化成int后排序
-                env= request.POST.get("env")
-                server_address= get_server_address(env)
-                if not server_address:
-                    return JsonResponse({"code": 404, "msg": "提交的运行环境为空，请选择环境后再提交！"})
-                print("######### 已经获取到集合，开始进行批量执行 #########")
-
-                suite_task.delay(test_suite_list, server_address, request.user.username)
-                return redirect(reverse("main_platform:test_execute"))
-            else:
-                print("######### 未获取到集合 #########")
-                return JsonResponse({"code": 404, "msg": "提交的测试集合为空，请选择集合后再提交！"})
+            register_jobs(test_suite_list,env,request.user.username,1,"2023-04-19 17:35:00")
+            return redirect(reverse("main_platform:test_execute"))
 
 
 @login_required
@@ -777,3 +794,7 @@ def project_test_case_statistics(request,project_id):
 
     }
     return render(request, "project_test_case_statistics.html", data)
+
+
+register_events(scheduler) # 注册定时任务并开始
+scheduler.start()

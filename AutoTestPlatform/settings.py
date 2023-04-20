@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_platform',
     'django_celery_results', # 用于异步任务
+    'django_apscheduler',
 ]
 
 MIDDLEWARE = [

@@ -2165,3 +2165,271 @@ AttributeError: 'str' object has no attribute 'json'
 2023-04-10 16:57:22,288 "tasks:setUp:146" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
 2023-04-10 16:57:22,289 "tasks:testMethod:175" [INFO]- 断言关键字【"code": 200】匹配成功
 2023-04-10 16:57:22,290 "tasks:tearDown:196" [INFO]- 用例【有入参，无出参】执行成功！
+2023-04-18 17:21:27,716 "tasks:setUp:53" [INFO]-                                                   
+2023-04-18 17:21:27,719 "tasks:setUp:57" [INFO]- ######### 开始执行用例【无入参，无出参，get测试】##########
+2023-04-18 17:21:27,723 "tasks:setUp:75" [INFO]- 所属项目:这是一个测试项目4
+2023-04-18 17:21:27,724 "tasks:setUp:77" [INFO]- 所属模块:这是一个测试模块4
+2023-04-18 17:21:27,724 "tasks:setUp:79" [INFO]- 接口名称:/atp/get_test/
+2023-04-18 17:21:27,725 "tasks:setUp:81" [INFO]- 请求方法:get
+2023-04-18 17:21:27,725 "tasks:setUp:83" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-04-18 17:21:27,726 "tasks:setUp:85" [INFO]- 请求数据:{"id":1,"name":123}
+2023-04-18 17:21:27,727 "tasks:setUp:87" [INFO]- 断言数据:"code": 200
+2023-04-18 17:21:27,727 "tasks:setUp:89" [INFO]- 提取参数:None
+2023-04-18 17:21:27,738 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-18 17:21:27,753 "process_data:request_process:49" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/?id=1&name=123
+2023-04-18 17:21:27,754 "process_data:request_process:50" [INFO]- 请求数据:{"id":1,"name":123}
+2023-04-18 17:21:27,754 "tasks:setUp:146" [INFO]- 响应数据:{"code": 200, "msg": "get查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "123", "method": "get"}
+2023-04-18 17:21:27,755 "tasks:testMethod:175" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-18 17:21:27,755 "tasks:tearDown:196" [INFO]- 用例【无入参，无出参，get测试】执行成功！
+2023-04-18 17:21:27,759 "tasks:setUp:53" [INFO]-                                                   
+2023-04-18 17:21:27,762 "tasks:setUp:57" [INFO]- ######### 开始执行用例【无入参，有出参】##########
+2023-04-18 17:21:27,766 "tasks:setUp:75" [INFO]- 所属项目:这是一个测试项目4
+2023-04-18 17:21:27,767 "tasks:setUp:77" [INFO]- 所属模块:这是一个测试模块4
+2023-04-18 17:21:27,767 "tasks:setUp:79" [INFO]- 接口名称:/atp/post_test/
+2023-04-18 17:21:27,768 "tasks:setUp:81" [INFO]- 请求方法:post
+2023-04-18 17:21:27,769 "tasks:setUp:83" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-18 17:21:27,769 "tasks:setUp:85" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-04-18 17:21:27,770 "tasks:setUp:87" [INFO]- 断言数据:"code": 200
+2023-04-18 17:21:27,771 "tasks:setUp:89" [INFO]- 提取参数:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-04-18 17:21:27,774 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-18 17:21:27,781 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-18 17:21:27,782 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-04-18 17:21:27,782 "tasks:setUp:146" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-04-18 17:21:27,783 "tasks:testMethod:175" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-18 17:21:27,784 "process_data:get_var_from_response:114" [INFO]- 变量公式:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-04-18 17:21:27,785 "process_data:get_var_from_response:121" [INFO]- 变量名称:code
+2023-04-18 17:21:27,785 "process_data:get_var_from_response:123" [INFO]- 提取正则:"code": (\d+)
+2023-04-18 17:21:27,786 "process_data:get_var_from_response:121" [INFO]- 变量名称:ip
+2023-04-18 17:21:27,787 "process_data:get_var_from_response:123" [INFO]- 提取正则:"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-04-18 17:21:27,788 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_160": {"code": "200", "ip": "192.168.31.205"}}
+2023-04-18 17:21:27,789 "tasks:tearDown:196" [INFO]- 用例【无入参，有出参】执行成功！
+2023-04-18 17:21:27,792 "tasks:setUp:53" [INFO]-                                                   
+2023-04-18 17:21:27,794 "tasks:setUp:57" [INFO]- ######### 开始执行用例【有入参，有出参】##########
+2023-04-18 17:21:27,797 "tasks:setUp:75" [INFO]- 所属项目:这是一个测试项目4
+2023-04-18 17:21:27,797 "tasks:setUp:77" [INFO]- 所属模块:这是一个测试模块4
+2023-04-18 17:21:27,798 "tasks:setUp:79" [INFO]- 接口名称:/atp/get_test/
+2023-04-18 17:21:27,798 "tasks:setUp:81" [INFO]- 请求方法:get
+2023-04-18 17:21:27,800 "tasks:setUp:83" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-04-18 17:21:27,801 "tasks:setUp:85" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"${code}","ip":"${ip}"}
+2023-04-18 17:21:27,801 "tasks:setUp:87" [INFO]- 断言数据:"code": 200
+2023-04-18 17:21:27,804 "tasks:setUp:89" [INFO]- 提取参数:method||"method": "(\w+)"
+2023-04-18 17:21:27,807 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-18 17:21:27,814 "process_data:request_process:49" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/?id=1&name=%E5%95%8A%E5%95%8A%E5%95%8A%E5%95%8A%E5%95%8A&code=200&ip=192.168.31.205
+2023-04-18 17:21:27,815 "process_data:request_process:50" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"200","ip":"192.168.31.205"}
+2023-04-18 17:21:27,816 "tasks:setUp:146" [INFO]- 响应数据:{"code": 200, "msg": "get查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊", "method": "get"}
+2023-04-18 17:21:27,816 "tasks:testMethod:175" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-18 17:21:27,817 "process_data:get_var_from_response:114" [INFO]- 变量公式:method||"method": "(\w+)"
+2023-04-18 17:21:27,817 "process_data:get_var_from_response:121" [INFO]- 变量名称:method
+2023-04-18 17:21:27,818 "process_data:get_var_from_response:123" [INFO]- 提取正则:"method": "(\w+)"
+2023-04-18 17:21:27,819 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_160": {"code": "200", "ip": "192.168.31.205"}, "current_id_161": {"method": "get"}}
+2023-04-18 17:21:27,820 "tasks:tearDown:196" [INFO]- 用例【有入参，有出参】执行成功！
+2023-04-18 17:21:27,823 "tasks:setUp:53" [INFO]-                                                   
+2023-04-18 17:21:27,826 "tasks:setUp:57" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-04-18 17:21:27,829 "tasks:setUp:75" [INFO]- 所属项目:这是一个测试项目4
+2023-04-18 17:21:27,830 "tasks:setUp:77" [INFO]- 所属模块:这是一个测试模块4
+2023-04-18 17:21:27,830 "tasks:setUp:79" [INFO]- 接口名称:/atp/post_test/
+2023-04-18 17:21:27,831 "tasks:setUp:81" [INFO]- 请求方法:post
+2023-04-18 17:21:27,833 "tasks:setUp:83" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-18 17:21:27,834 "tasks:setUp:85" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-04-18 17:21:27,835 "tasks:setUp:87" [INFO]- 断言数据:"code": 200
+2023-04-18 17:21:27,835 "tasks:setUp:89" [INFO]- 提取参数:None
+2023-04-18 17:21:27,838 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-18 17:21:27,845 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-18 17:21:27,846 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"get"}
+2023-04-18 17:21:27,846 "tasks:setUp:146" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-04-18 17:21:27,847 "tasks:testMethod:175" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-18 17:21:27,848 "tasks:tearDown:196" [INFO]- 用例【有入参，无出参】执行成功！
+2023-04-18 17:21:27,850 "tasks:setUp:53" [INFO]-                                                   
+2023-04-18 17:21:27,852 "tasks:setUp:57" [INFO]- ######### 开始执行用例【无入参，无出参，多错误断言】##########
+2023-04-18 17:21:27,855 "tasks:setUp:75" [INFO]- 所属项目:这是一个测试项目4
+2023-04-18 17:21:27,855 "tasks:setUp:77" [INFO]- 所属模块:这是一个测试模块4
+2023-04-18 17:21:27,856 "tasks:setUp:79" [INFO]- 接口名称:/atp/post_test/
+2023-04-18 17:21:27,856 "tasks:setUp:81" [INFO]- 请求方法:post
+2023-04-18 17:21:27,857 "tasks:setUp:83" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-18 17:21:27,858 "tasks:setUp:85" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-04-18 17:21:27,858 "tasks:setUp:87" [INFO]- 断言数据:"code": 200;"msg": "啊啊啊啊"
+2023-04-18 17:21:27,859 "tasks:setUp:89" [INFO]- 提取参数:None
+2023-04-18 17:21:27,861 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-18 17:21:27,870 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-18 17:21:27,871 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-04-18 17:21:27,872 "tasks:setUp:146" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-04-18 17:21:27,872 "tasks:testMethod:175" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-18 17:21:27,873 "tasks:testMethod:169" [INFO]- 断言关键字【"msg": "啊啊啊啊"】匹配失败
+2023-04-18 17:21:27,874 "tasks:tearDown:199" [INFO]- 用例【无入参，无出参，多错误断言】执行失败,请检查错误！
+2023-04-19 17:23:57,829 "tasks:setUp:52" [INFO]-                                                   
+2023-04-19 17:23:57,833 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-04-19 17:23:57,837 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-04-19 17:23:57,838 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-04-19 17:23:57,839 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-04-19 17:23:57,839 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-04-19 17:23:57,840 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-19 17:23:57,840 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-04-19 17:23:57,841 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-04-19 17:23:57,842 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-04-19 17:23:57,845 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-04-19 17:23:57,849 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-04-19 17:35:01,082 "tasks:setUp:52" [INFO]-                                                   
+2023-04-19 17:35:01,085 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-04-19 17:35:01,089 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-04-19 17:35:01,090 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-04-19 17:35:01,090 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-04-19 17:35:01,091 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-04-19 17:35:01,091 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-19 17:35:01,092 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-04-19 17:35:01,092 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-04-19 17:35:01,093 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-04-19 17:35:01,100 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-04-19 17:35:01,103 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-04-20 16:12:00,131 "tasks:setUp:52" [INFO]-                                                   
+2023-04-20 16:12:00,134 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-04-20 16:12:00,138 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-04-20 16:12:00,138 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-04-20 16:12:00,139 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-04-20 16:12:00,140 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-04-20 16:12:00,141 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-20 16:12:00,142 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-04-20 16:12:00,142 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-04-20 16:12:00,143 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-04-20 16:12:00,145 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-04-20 16:12:00,149 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-04-20 16:32:00,101 "tasks:setUp:52" [INFO]-                                                   
+2023-04-20 16:32:00,104 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-04-20 16:32:00,107 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-04-20 16:32:00,107 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-04-20 16:32:00,108 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-04-20 16:32:00,108 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-04-20 16:32:00,109 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-20 16:32:00,111 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-04-20 16:32:00,112 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-04-20 16:32:00,113 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-04-20 16:32:00,115 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-04-20 16:32:00,121 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-04-20 16:38:00,097 "tasks:setUp:52" [INFO]-                                                   
+2023-04-20 16:38:00,100 "tasks:setUp:56" [INFO]- ######### 开始执行用例【测试多个提取关键字】##########
+2023-04-20 16:38:00,104 "tasks:setUp:74" [INFO]- 所属项目:测试项目名称5
+2023-04-20 16:38:00,105 "tasks:setUp:76" [INFO]- 所属模块:测试模块5
+2023-04-20 16:38:00,106 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-04-20 16:38:00,106 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-04-20 16:38:00,106 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-20 16:38:00,107 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-04-20 16:38:00,107 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-04-20 16:38:00,108 "tasks:setUp:88" [INFO]- 提取参数:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-04-20 16:38:00,118 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-20 16:38:00,143 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-20 16:38:00,144 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-04-20 16:38:00,145 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-04-20 16:38:00,145 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-20 16:38:00,146 "process_data:get_var_from_response:114" [INFO]- 变量公式:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-04-20 16:38:00,146 "process_data:get_var_from_response:121" [INFO]- 变量名称:code
+2023-04-20 16:38:00,147 "process_data:get_var_from_response:123" [INFO]- 提取正则:"code": (\d+)
+2023-04-20 16:38:00,148 "process_data:get_var_from_response:121" [INFO]- 变量名称:ip
+2023-04-20 16:38:00,148 "process_data:get_var_from_response:123" [INFO]- 提取正则:"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-04-20 16:38:00,150 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_5": {"code": "200", "ip": "192.168.31.205"}}
+2023-04-20 16:38:00,150 "tasks:tearDown:195" [INFO]- 用例【测试多个提取关键字】执行成功！
+2023-04-20 16:41:00,074 "tasks:setUp:52" [INFO]-                                                   
+2023-04-20 16:41:00,076 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，get测试】##########
+2023-04-20 16:41:00,079 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-04-20 16:41:00,079 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-04-20 16:41:00,080 "tasks:setUp:78" [INFO]- 接口名称:/atp/get_test/
+2023-04-20 16:41:00,080 "tasks:setUp:80" [INFO]- 请求方法:get
+2023-04-20 16:41:00,080 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-04-20 16:41:00,081 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":123}
+2023-04-20 16:41:00,081 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-04-20 16:41:00,082 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-04-20 16:41:00,084 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-20 16:41:00,091 "process_data:request_process:49" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/?id=1&name=123
+2023-04-20 16:41:00,091 "process_data:request_process:50" [INFO]- 请求数据:{"id":1,"name":123}
+2023-04-20 16:41:00,092 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "get查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "123", "method": "get"}
+2023-04-20 16:41:00,092 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-20 16:41:00,093 "tasks:tearDown:195" [INFO]- 用例【无入参，无出参，get测试】执行成功！
+2023-04-20 16:41:00,095 "tasks:setUp:52" [INFO]-                                                   
+2023-04-20 16:41:00,097 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，有出参】##########
+2023-04-20 16:41:00,099 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-04-20 16:41:00,100 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-04-20 16:41:00,100 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-04-20 16:41:00,101 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-04-20 16:41:00,101 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-20 16:41:00,102 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-04-20 16:41:00,102 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-04-20 16:41:00,103 "tasks:setUp:88" [INFO]- 提取参数:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-04-20 16:41:00,105 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-20 16:41:00,110 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-20 16:41:00,111 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-04-20 16:41:00,111 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-04-20 16:41:00,112 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-20 16:41:00,112 "process_data:get_var_from_response:114" [INFO]- 变量公式:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-04-20 16:41:00,113 "process_data:get_var_from_response:121" [INFO]- 变量名称:code
+2023-04-20 16:41:00,113 "process_data:get_var_from_response:123" [INFO]- 提取正则:"code": (\d+)
+2023-04-20 16:41:00,114 "process_data:get_var_from_response:121" [INFO]- 变量名称:ip
+2023-04-20 16:41:00,121 "process_data:get_var_from_response:123" [INFO]- 提取正则:"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-04-20 16:41:00,122 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_160": {"code": "200", "ip": "192.168.31.205"}}
+2023-04-20 16:41:00,123 "tasks:tearDown:195" [INFO]- 用例【无入参，有出参】执行成功！
+2023-04-20 16:41:00,126 "tasks:setUp:52" [INFO]-                                                   
+2023-04-20 16:41:00,129 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，有出参】##########
+2023-04-20 16:41:00,132 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-04-20 16:41:00,132 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-04-20 16:41:00,133 "tasks:setUp:78" [INFO]- 接口名称:/atp/get_test/
+2023-04-20 16:41:00,134 "tasks:setUp:80" [INFO]- 请求方法:get
+2023-04-20 16:41:00,135 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-04-20 16:41:00,135 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"${code}","ip":"${ip}"}
+2023-04-20 16:41:00,136 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-04-20 16:41:00,137 "tasks:setUp:88" [INFO]- 提取参数:method||"method": "(\w+)"
+2023-04-20 16:41:00,140 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-20 16:41:00,146 "process_data:request_process:49" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/?id=1&name=%E5%95%8A%E5%95%8A%E5%95%8A%E5%95%8A%E5%95%8A&code=200&ip=192.168.31.205
+2023-04-20 16:41:00,146 "process_data:request_process:50" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"200","ip":"192.168.31.205"}
+2023-04-20 16:41:00,147 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "get查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊", "method": "get"}
+2023-04-20 16:41:00,148 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-20 16:41:00,148 "process_data:get_var_from_response:114" [INFO]- 变量公式:method||"method": "(\w+)"
+2023-04-20 16:41:00,149 "process_data:get_var_from_response:121" [INFO]- 变量名称:method
+2023-04-20 16:41:00,149 "process_data:get_var_from_response:123" [INFO]- 提取正则:"method": "(\w+)"
+2023-04-20 16:41:00,150 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_160": {"code": "200", "ip": "192.168.31.205"}, "current_id_161": {"method": "get"}}
+2023-04-20 16:41:00,150 "tasks:tearDown:195" [INFO]- 用例【有入参，有出参】执行成功！
+2023-04-20 16:41:00,152 "tasks:setUp:52" [INFO]-                                                   
+2023-04-20 16:41:00,154 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-04-20 16:41:00,157 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-04-20 16:41:00,158 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-04-20 16:41:00,159 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-04-20 16:41:00,159 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-04-20 16:41:00,159 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-20 16:41:00,160 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-04-20 16:41:00,160 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-04-20 16:41:00,161 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-04-20 16:41:00,163 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-20 16:41:00,185 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-20 16:41:00,186 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"get"}
+2023-04-20 16:41:00,187 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-04-20 16:41:00,188 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-20 16:41:00,189 "tasks:tearDown:195" [INFO]- 用例【有入参，无出参】执行成功！
+2023-04-20 16:41:00,192 "tasks:setUp:52" [INFO]-                                                   
+2023-04-20 16:41:00,195 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，多错误断言】##########
+2023-04-20 16:41:00,198 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-04-20 16:41:00,198 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-04-20 16:41:00,199 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-04-20 16:41:00,200 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-04-20 16:41:00,200 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-20 16:41:00,201 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-04-20 16:41:00,202 "tasks:setUp:86" [INFO]- 断言数据:"code": 200;"msg": "啊啊啊啊"
+2023-04-20 16:41:00,203 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-04-20 16:41:00,205 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-04-20 16:41:00,213 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-04-20 16:41:00,214 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-04-20 16:41:00,214 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-04-20 16:41:00,215 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-04-20 16:41:00,215 "tasks:testMethod:168" [INFO]- 断言关键字【"msg": "啊啊啊啊"】匹配失败
+2023-04-20 16:41:00,216 "tasks:tearDown:198" [INFO]- 用例【无入参，无出参，多错误断言】执行失败,请检查错误！
