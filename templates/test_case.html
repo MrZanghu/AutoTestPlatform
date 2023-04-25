@@ -45,12 +45,14 @@
 
     <form action="" method="POST">
         {% csrf_token %}
-        <input style="margin-left: 5px;" type="submit" value='执行测试用例' name="ex_case" onclick="return ischecked()"/>
-        <span style="margin-left: 5px;">运行环境：</span>
+        <span style="margin-left: 5px;font-size: 15px">运行环境：</span>
         <select name="env">
-            <option selected value="dev">dev</option>
-            <option value="test">test</option>
+            <option selected value="dev" style="font-size: 15px">dev</option>
+            <option value="test" style="font-size: 15px">test</option>
         </select>
+        <input type="datetime-local" style="font-size: 10px" name="ex_time">
+        <input style="margin-left: 5px;font-size: 10px" type="submit" value='执行测试用例' name="ex_case" onclick="return ischecked()"/>
+        <p class="glyphicon glyphicon-info-sign" title="设置执行时间，默认下一分钟后执行"></p>
 
         <div class="table-responsive">
             <table class="table table-striped">

@@ -21,7 +21,7 @@ function ischecked() {
     //遍历每一个复选框，为true则上传
     for (var i = 0; i < $allCheck.length; i++) {
             if ($allCheck[i].checked === true) {
-                alert("点击确认，30秒后执行用例，跳转至执行结果页等待");
+                alert("点击确认执行用例，跳转至执行结果页等待");
                 return true;
             }
         }

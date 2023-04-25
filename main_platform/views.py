@@ -16,13 +16,12 @@ from main_platform.models import Project, Module, TestCase,\
     TestSuite, AddCaseIntoSuite, Server, UpLoadsCaseTemplate, \
     TestCaseExecuteResult,TestExecute,TestSuiteExecuteRecord,TestSuiteTestCaseExecuteRecord
 from apscheduler.schedulers.background import BackgroundScheduler
-from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
+from django_apscheduler.jobstores import DjangoJobStore
 
 
 
-scheduler= BackgroundScheduler(timezone='Asia/Shanghai') # 实例化调度器
-scheduler.add_jobstore(DjangoJobStore(), 'default')
-# django_apscheduler_djangojobexecution没有存记录，不知原因
+scheduler= BackgroundScheduler(timezone= 'Asia/Shanghai') # 实例化调度器
+scheduler.add_jobstore(DjangoJobStore(), "default")
 
 
 def get_test(request):
@@ -150,20 +149,27 @@ def get_server_address(env):
         return None
 
 
-def register_jobs(lists,envs,username,types,run_date):
+def register_jobs(lists,envs,username,types,id,year,month,day,hour,minute):
     '''
     执行用例or集合，进行定时任务注册
     :param lists:
     :param envs:
     :param username:
-    :param type: 0->用例，1->集合
-    :param run_date:
+    :param types: 0->用例，1->集合
+    :param id:
+    :param hour:
+    :param minute:
+    :param second:
     :return:
     '''
-    scheduler.add_job(do_task_time,"date",run_date= "2023-04-20 16:41:00",args= [lists,envs,username,types])
+    # scheduler.add_job(do_task_jobs,"interval",id= id,seconds= 30,args= [lists,envs,username,types,id])
+    # # 单次任务不会有执行记录
+
+    scheduler.add_job(do_task_jobs,"cron",id= id,year= year,month= month,day= day,
+                      hour= hour,minute= minute,args= [lists,envs,username,types,id])
 
 
-def do_task_time(lists,envs,username,types):
+def do_task_jobs(lists,envs,username,types,id):
     '''
     执行用例or集合的定时任务
     :param lists:
@@ -268,6 +274,14 @@ def test_case(request):
     elif request.method== "POST":
         case_name= request.POST.get("case_name")
         ex_case= request.POST.get("ex_case") # 判断是否执行用例的关键字
+        ex_time= request.POST.get("ex_time") # 判断执行时间的关键字
+        if ex_time== "":
+            ex_time= (datetime.datetime.now()+datetime.timedelta(minutes=1)).strftime("%Y-%m-%dT%H:%M")
+        year= ex_time[:4]
+        month= ex_time[5:7]
+        day= ex_time[8:10]
+        hour= ex_time[11:13]
+        minute= ex_time[14:]
         data= {}
 
         if not ex_case:
@@ -283,7 +297,7 @@ def test_case(request):
         else:
             env= request.POST.get("env")
             test_case_list= request.POST.getlist("testcases_list")
-            register_jobs(test_case_list,env,request.user.username,0,"2023-04-19 17:35:00")
+            register_jobs(test_case_list,env,request.user.username,0,"test_job0_%s"%ex_time,year,month,day,hour,minute)
             return redirect(reverse("main_platform:test_execute"))
 
 
@@ -531,6 +545,14 @@ def test_suite(request):
     # 点击执行后，生成集合执行记录，集合执行记录包含用例执行记录
         suite_name= request.POST.get("suite_name")
         ex_suite= request.POST.get("ex_suite")  # 判断是否执行集合的关键字
+        ex_time= request.POST.get("ex_time")  # 判断执行时间的关键字
+        if ex_time== "":
+            ex_time= (datetime.datetime.now() + datetime.timedelta(minutes=1)).strftime("%Y-%m-%dT%H:%M")
+        year= ex_time[:4]
+        month= ex_time[5:7]
+        day= ex_time[8:10]
+        hour= ex_time[11:13]
+        minute= ex_time[14:]
         data= {}
 
         if not ex_suite:
@@ -546,7 +568,7 @@ def test_suite(request):
         else:
             env= request.POST.get("env")
             test_suite_list= request.POST.getlist("testsuite_list")
-            register_jobs(test_suite_list,env,request.user.username,1,"2023-04-19 17:35:00")
+            register_jobs(test_suite_list,env,request.user.username,1,"test_job1_%s"%ex_time,year,month,day,hour,minute)
             return redirect(reverse("main_platform:test_execute"))
 
 
@@ -796,5 +818,5 @@ def project_test_case_statistics(request,project_id):
     return render(request, "project_test_case_statistics.html", data)
 
 
-register_events(scheduler) # 注册定时任务并开始
+# register_events(scheduler) # 注册定时任务并开始,最新版本不需要这一步
 scheduler.start()

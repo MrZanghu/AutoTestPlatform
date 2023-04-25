@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="{% static 'css/test_suite.css' %}">
 {% endblock %}
 
-
 {% block content %}
     <div id="group">
         <div id="search">
@@ -21,12 +20,15 @@
 
     <form action="" method="POST">
         {% csrf_token %}
-        <input style="margin-left: 5px;" type="submit" value='执行测试集合' name="ex_suite" onclick="return ischecked()"/>
         <span style="margin-left: 5px;">运行环境：</span>
         <select name="env">
             <option selected value="dev">dev</option>
             <option value="test">test</option>
         </select>
+        <input type="datetime-local" style="font-size: 10px" name="ex_time">
+        <input style="margin-left: 5px;font-size: 10px" type="submit" value='执行测试集合' name="ex_suite" onclick="return ischecked()"/>
+        <p class="glyphicon glyphicon-info-sign" title="设置执行时间，默认下一分钟后执行"></p>
+
 
         <div class="table-responsive">
             <table class="table table-striped">
@@ -55,7 +57,8 @@
                             <a href="{% url 'main_platform:view_or_delete_cases_in_suite' case_suite.id %}">查看/删除测试用例</a>
                         </td>
                         <td><a href="{% url 'main_platform:add_case_into_suite' case_suite.id %}">添加测试用例</a></td>
-                        <td><a href="{% url '[main_platform]:test_suite_statistics' case_suite.id %}">查看用例集合执行结果</a></td>
+                        <td><a href="{% url '[main_platform]:test_suite_statistics' case_suite.id %}">查看用例集合执行结果</a>
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
