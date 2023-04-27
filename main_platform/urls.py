@@ -61,4 +61,7 @@ urlpatterns= [
     re_path(r'project_test_case_statistics/(?P<project_id>\d+)/',
             views.project_test_case_statistics, name="project_test_case_statistics"),
     # 统计结果相关
+
+    path(r'job_execute/', views.job_execute, name= "job_execute"),
+    # 任务相关
 ]

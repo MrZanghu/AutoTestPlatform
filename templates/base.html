@@ -37,6 +37,7 @@
                 <li class="active"><a href="{% url 'main_platform:test_case' %}">测试用例</a></li>
                 <li class="active"><a href="{% url 'main_platform:test_suite' %}">用例集合</a></li>
                 <li class="active"><a href="{% url 'main_platform:test_execute' %}">执行结果</a></li>
+                <li class="active"><a href="{% url 'main_platform:job_execute' %}">定时任务</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if request.user.is_authenticated %}

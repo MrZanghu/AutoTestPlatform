@@ -236,3 +236,16 @@ class Server(models.Model):
         db_table= "atp_server"
         verbose_name= "环境配置表"
         verbose_name_plural= "环境配置表"
+
+
+class JobExecuted(models.Model):
+    id= models.AutoField(primary_key= True)
+    job_id= models.CharField("任务id",max_length= 128,null= False)
+    status= models.CharField("任务状态",max_length= 64,null= True, default= "done")
+    run_time= models.DateTimeField("执行时间", auto_now_add= True)
+    user= models.CharField("任务负责人",max_length= 64, null= False, blank= False)
+
+    class Meta:
+        db_table= "atp_job_executed"
+        verbose_name= "定时任务表"
+        verbose_name_plural= "定时任务表"

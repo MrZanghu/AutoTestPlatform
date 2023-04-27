@@ -14,7 +14,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from main_platform.models import Project, Module, TestCase,\
     TestSuite, AddCaseIntoSuite, Server, UpLoadsCaseTemplate, \
-    TestCaseExecuteResult,TestExecute,TestSuiteExecuteRecord,TestSuiteTestCaseExecuteRecord
+    TestCaseExecuteResult,TestExecute,TestSuiteExecuteRecord,\
+    TestSuiteTestCaseExecuteRecord,JobExecuted
 from apscheduler.schedulers.background import BackgroundScheduler
 from django_apscheduler.jobstores import DjangoJobStore
 
@@ -190,6 +191,11 @@ def do_task_jobs(lists,envs,username,types,id):
         else:
             print("######### 已经获取到集合，开始进行批量执行 #########")
             suite_task.delay(test_list, server_address, username)
+        print(123123123123123123)
+        jbe= JobExecuted() # 记录定时任务
+        jbe.job_id= id
+        jbe.user= username
+        jbe.save()
     else:
         print("######### 未获取到用例or集合 #########")
         return JsonResponse({"code": 404, "msg": "提交的测试用例or集合为空！"})
@@ -816,6 +822,13 @@ def project_test_case_statistics(request,project_id):
 
     }
     return render(request, "project_test_case_statistics.html", data)
+
+
+def job_execute(request):
+    data= {
+
+    }
+    return render(request, "job_execute.html", data)
 
 
 # register_events(scheduler) # 注册定时任务并开始,最新版本不需要这一步
