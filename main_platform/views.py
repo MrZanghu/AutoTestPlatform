@@ -1,4 +1,5 @@
 import datetime
+import logging
 from . import viewsParams as vp
 from django.contrib import auth
 from django.urls import reverse
@@ -23,6 +24,7 @@ from django_apscheduler.jobstores import DjangoJobStore
 
 scheduler= BackgroundScheduler(timezone= 'Asia/Shanghai') # 实例化调度器
 scheduler.add_jobstore(DjangoJobStore(), "default")
+logger= logging.getLogger("main_platform")
 
 
 def get_test(request):
@@ -164,10 +166,10 @@ def register_jobs(lists,envs,username,types,id,year,month,day,hour,minute):
     :return:
     '''
     # scheduler.add_job(do_task_jobs,"interval",id= id,seconds= 30,args= [lists,envs,username,types,id])
-    # # 单次任务不会有执行记录
 
     scheduler.add_job(do_task_jobs,"cron",id= id,year= year,month= month,day= day,
                       hour= hour,minute= minute,args= [lists,envs,username,types,id])
+    # 单次任务不会有执行记录，创建JobExecuted用于储存
 
 
 def do_task_jobs(lists,envs,username,types,id):
@@ -177,28 +179,34 @@ def do_task_jobs(lists,envs,username,types,id):
     :param envs:
     :param username:
     :param types: type: 0->用例，1->集合
+    :param id:定时任务id
     :return:
     '''
     if lists:
         test_list= [int(x) for x in lists]
         test_list.sort()  # 将id转化成int后排序
         server_address= get_server_address(envs)
-        if not server_address:
-            return JsonResponse({"code": 404, "msg": "提交的运行环境为空，请选择环境后再提交！"})
-        if types== 0:
-            print("######### 已经获取到用例，开始进行批量执行 #########")
-            case_task.delay(test_list, server_address, username)
-        else:
-            print("######### 已经获取到集合，开始进行批量执行 #########")
-            suite_task.delay(test_list, server_address, username)
-        print(123123123123123123)
+        # server_address= False
         jbe= JobExecuted() # 记录定时任务
         jbe.job_id= id
         jbe.user= username
-        jbe.save()
+        jbe.status= 0
+        if not server_address:
+            logger.info({"code": 404, "msg": "提交的运行环境为空，请选择环境后再提交！"})
+            return
+        if types== 0:
+            logger.info(" " * 50)
+            logger.info("######### 已经获取到用例，开始进行批量执行 #########")
+            case_task.delay(test_list, server_address, username)
+            jbe.save()
+        else:
+            logger.info(" " * 50)
+            logger.info("######### 已经获取到集合，开始进行批量执行 #########")
+            suite_task.delay(test_list, server_address, username)
+            jbe.save()
     else:
-        print("######### 未获取到用例or集合 #########")
-        return JsonResponse({"code": 404, "msg": "提交的测试用例or集合为空！"})
+        logger.info({"code": 404, "msg": "提交的测试用例or集合为空！"})
+        return
 
 
 @login_required
@@ -825,9 +833,11 @@ def project_test_case_statistics(request,project_id):
 
 
 def job_execute(request):
-    data= {
-
-    }
+    '''每次请求后，查看纸片'''
+    cases= TestCase.objects.filter(status=0).order_by("-create_time")  # 根据创建时间倒序
+    data = {}
+    data["pages"] = get_paginator(request, cases)
+    data["case_name"] = ""
     return render(request, "job_execute.html", data)
 
 

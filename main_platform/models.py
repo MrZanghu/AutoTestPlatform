@@ -240,10 +240,10 @@ class Server(models.Model):
 
 class JobExecuted(models.Model):
     id= models.AutoField(primary_key= True)
-    job_id= models.CharField("任务id",max_length= 128,null= False)
-    status= models.CharField("任务状态",max_length= 64,null= True, default= "done")
+    job_id= models.CharField("任务名称",max_length= 128,null= False)
+    status= models.IntegerField("任务状态",default= 0,help_text="0为未开始，1为已完成，2为删除，3为暂停")
     run_time= models.DateTimeField("执行时间", auto_now_add= True)
-    user= models.CharField("任务负责人",max_length= 64, null= False, blank= False)
+    user= models.CharField("负责人",max_length= 64, null= False, blank= False)
 
     class Meta:
         db_table= "atp_job_executed"
