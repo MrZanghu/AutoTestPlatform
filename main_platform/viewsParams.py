@@ -12,3 +12,6 @@ request_method= ["get","post","put"]
 title_list= ["id", "case_name", "uri", "request_method",
               "request_data", "assert_key", "related_case_id",
               "extract_var", "maintainer", "user"]
+
+# 任务状态
+job_status= ["0","1","2","3"]

@@ -3,9 +3,9 @@
 {% block title %}定时任务{% endblock %}
 
 {% block content %}
-    <form action="{% url 'main_platform:project' %}" method="POST">
+    <form action="{% url 'main_platform:job_execute' %}" method="POST">
         {% csrf_token %}
-        <input style="margin-left: 5px;" type="text" name="proj_name" value="{{ proj_name }}" placeholder="输入任务名称">
+        <input style="margin-left: 5px;" type="text" name="job_name" value="{{ job_name }}" placeholder="输入任务名称">
         <input type="submit" value="搜索">
     </form>
 

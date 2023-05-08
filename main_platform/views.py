@@ -18,7 +18,7 @@ from main_platform.models import Project, Module, TestCase,\
     TestCaseExecuteResult,TestExecute,TestSuiteExecuteRecord,\
     TestSuiteTestCaseExecuteRecord,JobExecuted
 from apscheduler.schedulers.background import BackgroundScheduler
-from django_apscheduler.jobstores import DjangoJobStore
+from django_apscheduler.jobstores import DjangoJobStore,register_job
 
 
 
@@ -167,7 +167,7 @@ def register_jobs(lists,envs,username,types,id,year,month,day,hour,minute):
     '''
     # scheduler.add_job(do_task_jobs,"interval",id= id,seconds= 30,args= [lists,envs,username,types,id])
 
-    scheduler.add_job(do_task_jobs,"cron",id= id,year= year,month= month,day= day,
+    scheduler.add_job(do_task_jobs,"cron",id= id,replace_existing= True,year= year,month= month,day= day,
                       hour= hour,minute= minute,args= [lists,envs,username,types,id])
     # 单次任务不会有执行记录，创建JobExecuted用于储存
 
@@ -187,24 +187,20 @@ def do_task_jobs(lists,envs,username,types,id):
         test_list.sort()  # 将id转化成int后排序
         server_address= get_server_address(envs)
         # server_address= False
-        jbe= JobExecuted() # 记录定时任务
-        jbe.job_id= id
-        jbe.user= username
-        jbe.status= 0
         if not server_address:
+            logger.info(" " * 50)
             logger.info({"code": 404, "msg": "提交的运行环境为空，请选择环境后再提交！"})
             return
         if types== 0:
             logger.info(" " * 50)
             logger.info("######### 已经获取到用例，开始进行批量执行 #########")
             case_task.delay(test_list, server_address, username)
-            jbe.save()
         else:
             logger.info(" " * 50)
             logger.info("######### 已经获取到集合，开始进行批量执行 #########")
             suite_task.delay(test_list, server_address, username)
-            jbe.save()
     else:
+        logger.info(" " * 50)
         logger.info({"code": 404, "msg": "提交的测试用例or集合为空！"})
         return
 
@@ -312,6 +308,13 @@ def test_case(request):
             env= request.POST.get("env")
             test_case_list= request.POST.getlist("testcases_list")
             register_jobs(test_case_list,env,request.user.username,0,"test_job0_%s"%ex_time,year,month,day,hour,minute)
+
+            jbe= JobExecuted()  # 记录定时任务
+            jbe.job_id= "test_job0_%s" % ex_time
+            jbe.user= request.user.username
+            jbe.status= 0
+            jbe.save()
+
             return redirect(reverse("main_platform:test_execute"))
 
 
@@ -583,6 +586,12 @@ def test_suite(request):
             env= request.POST.get("env")
             test_suite_list= request.POST.getlist("testsuite_list")
             register_jobs(test_suite_list,env,request.user.username,1,"test_job1_%s"%ex_time,year,month,day,hour,minute)
+
+            jbe= JobExecuted()  # 记录定时任务
+            jbe.job_id= "test_job1_%s"%ex_time
+            jbe.user= request.user.username
+            jbe.status= 0
+            jbe.save()
             return redirect(reverse("main_platform:test_execute"))
 
 
@@ -832,14 +841,100 @@ def project_test_case_statistics(request,project_id):
     return render(request, "project_test_case_statistics.html", data)
 
 
+@login_required
 def job_execute(request):
-    '''每次请求后，查看纸片'''
-    cases= TestCase.objects.filter(status=0).order_by("-create_time")  # 根据创建时间倒序
-    data = {}
-    data["pages"] = get_paginator(request, cases)
-    data["case_name"] = ""
+
+
+    if request.method== "POST":
+        # 如果为post请求
+        job_name= request.POST.get("job_name")
+        if job_name== "":
+            # 未输入直接点击查询，返回所有模块
+            job_name= ""
+            jobs= Project.objects.order_by("-create_time")
+        else:
+            jobs= Project.objects.filter(name__contains= job_name).order_by("-create_time") # 模糊查询所有项目名
+    else:
+        job_name= ""
+        jobs= Project.objects.order_by("-create_time") # 根据创建时间倒序
+
+    data= {
+        "pages": get_paginator(request, jobs),  # 返回分页
+        "job_name": job_name,
+    }
     return render(request, "job_execute.html", data)
 
 
-# register_events(scheduler) # 注册定时任务并开始,最新版本不需要这一步
+@register_job(scheduler, "interval", seconds= 15,id= "synchronous_jobs",replace_existing= True)
+def synchronous_jobs():
+    '''
+    定时任务，同步 atp_job_executed & django_apscheduler_djangojob，处理异常结果
+    :return:null
+    '''
+    jobs= []
+    for i in scheduler.get_jobs(): # 读取aps表
+        jobs.append(i.id)
+    jobs.remove("synchronous_jobs")
+    jobs_exe= [x for x in JobExecuted.objects.all()]
+
+    for je in jobs_exe:
+        if je.job_id not in jobs: # aps表内无此任务 1/2
+            if je.status== 0:
+                je.status= 1
+                je.save()
+            elif je.status== 3:
+                je.status= 1
+                je.save()
+            else:
+                pass
+        else: # aps表内有此任务 0/3
+            if je.status== 1:
+                je.status= 0
+                je.save()
+            elif je.status== 2:
+                je.status= 0
+                je.save()
+            else:
+                pass
+    logger.info(" " * 50)
+    logger.info("同步完成！")
+
+
+# @login_required
+@csrf_exempt
+def change_job_status(request,id,status):
+    '''
+    主页-定时任务-修改任务状态
+    :param request:
+    :param id:
+    :param status:改变状态
+    :return:
+    '''
+    if request.method!= "POST":
+        return JsonResponse(data= {"msg":"错误的请求方式","code":404})
+    else:
+        if status not in vp.job_status:
+            return JsonResponse(data= {"msg":"错误的任务状态","code":404})
+        else:
+            if status== "2": # 删除
+                scheduler.remove_job(job_id= id)
+            elif status== "3": # 暂停
+                scheduler.pause_job(job_id= id)
+            elif status== "0": # 恢复
+                scheduler.resume_job(job_id= id)
+            job= JobExecuted.objects.get(job_id= id)
+            job.status= status
+            job.save()
+            return JsonResponse(data= {"msg":"修改状态完成","code":200})
+
+
 scheduler.start()
+'''
+Apscheduler报错问题，因为在uwsgi是启用的多进程，然后每个进程中都存在一个执行器的实例，
+在定时任务的数据表django_apscheduler_djangojobexecution中每一个任务其实是有4个实例，
+并且会报一个get() returned more than one %s – it returned %s的一个报错，
+其实这个报错的原因是因为：他使用的django的orm的get方法，因为get如果获取到的是多条而不是唯一就会报错
+'''
+
+
+定时任务同步表已完成，该写前端

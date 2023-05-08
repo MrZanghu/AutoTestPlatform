@@ -63,5 +63,6 @@ urlpatterns= [
     # 统计结果相关
 
     path(r'job_execute/', views.job_execute, name= "job_execute"),
+    re_path(r'change_job_status/(?P<id>([\s\S]*))/(?P<status>\d+)/', views.change_job_status, name= "change_job_status"),
     # 任务相关
 ]
