@@ -38,31 +38,33 @@ urlpatterns= [
         name= "view_or_delete_cases_in_suite"),
     # 用例集相关
 
-    path(r'test_execute/', views.test_execute, name= "test_execute"),
-    re_path(r'down_test_execute_template/(?P<id>\d+)/',
+    re_path(r'test_execute/(?P<jobid>[\s\S]*)/', views.test_execute, name= "test_execute"),
+    re_path(r'^down_test_execute_template/(?P<id>\d+)/',
         views.down_test_execute_template, name= "down_test_execute_template"),
-    re_path(r'test_case_execute_record/(?P<id>\d+)/',
+    re_path(r'^test_case_execute_record/(?P<id>\d+)/',
         views.test_case_execute_record, name= "test_case_execute_record"),
     re_path('test_execute_show_exception/(?P<execute_id>[0-9]+)$',
             views.test_execute_show_exception, name= "test_execute_show_exception"),
     re_path('testsuite_execute_show_exception/(?P<execute_id>[0-9]+)$',
             views.testsuite_execute_show_exception, name="testsuite_execute_show_exception"),
-    re_path(r'test_suite_execute_record/(?P<id>\d+)/(?P<statistics>\d+)/',
+    re_path(r'^test_suite_execute_record/(?P<id>\d+)/(?P<statistics>\d+)/',
         views.test_suite_execute_record, name= "test_suite_execute_record"),
     # 执行记录相关
 
-    re_path(r'test_suite_statistics/(?P<suite_id>\d+)/',
+    re_path(r'^test_suite_statistics/(?P<suite_id>\d+)/',
             views.test_suite_statistics, name="test_suite_statistics"),
-    re_path(r'test_suite_tc_execute_record/(?P<id>\d+)/',
+    re_path(r'^test_suite_tc_execute_record/(?P<id>\d+)/',
             views.test_suite_test_case_execute_record,
             name="test_suite_tc_execute_record"),  # 地址路径不能过长，导致读取不出id
-    re_path(r'module_test_case_statistics/(?P<module_id>\d+)/',
+    re_path(r'^module_test_case_statistics/(?P<module_id>\d+)/',
             views.module_test_case_statistics, name="module_test_case_statistics"),
-    re_path(r'project_test_case_statistics/(?P<project_id>\d+)/',
+    re_path(r'^project_test_case_statistics/(?P<project_id>\d+)/',
             views.project_test_case_statistics, name="project_test_case_statistics"),
     # 统计结果相关
 
     path(r'job_execute/', views.job_execute, name= "job_execute"),
-    re_path(r'change_job_status/(?P<id>([\s\S]*))/(?P<status>\d+)/', views.change_job_status, name= "change_job_status"),
+    re_path(r'^change_job_status/(?P<id>([\s\S]*))/(?P<status>\d+)/',
+            views.change_job_status, name= "change_job_status"),
+    path(r'test_case/atp/get_job_name/',views.get_job_name, name= "get_job_name"),
     # 任务相关
 ]

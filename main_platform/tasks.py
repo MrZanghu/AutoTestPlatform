@@ -209,7 +209,7 @@ class BeginTest(ParametrizedTestCase):
 
 
 @ex_cases_app.task
-def case_task(test_case_list:list, server_address, user):
+def case_task(test_case_list:list, server_address, user,id):
     '''
     进行测试用例的执行操作
     :param test_case_list: 用例id列表
@@ -240,6 +240,7 @@ def case_task(test_case_list:list, server_address, user):
     ate= models.TestExecute() # 保存执行记录
     ate.user= user
     ate.type= 0
+    ate.job_id= id
     ate.case_or_suite_ids= ','.join(map(str,test_case_list))
     ate.download_report_path= "report/%s.html"%("接口测试报告"+time_)
     ate.save()
@@ -390,7 +391,7 @@ def process_xls(up_times,owner,file_names):
 
 
 @ex_cases_app.task
-def suite_task(test_suite_list:list,server_address, user):
+def suite_task(test_suite_list:list,server_address, user,id):
     '''
     进行测试集合的执行操作
     :param test_suite_list: 集合id列表
@@ -457,6 +458,7 @@ def suite_task(test_suite_list:list,server_address, user):
     ate= models.TestExecute()  # 保存执行记录
     ate.user= user
     ate.type= 1
+    ate.job_id= id
     ate.case_or_suite_ids= ','.join(map(str, test_suite_list))
     ate.download_report_path= "report/%s.zip" % ("接口测试报告" + suites_time_)
     ate.save()

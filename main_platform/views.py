@@ -165,8 +165,6 @@ def register_jobs(lists,envs,username,types,id,year,month,day,hour,minute):
     :param second:
     :return:
     '''
-    # scheduler.add_job(do_task_jobs,"interval",id= id,seconds= 30,args= [lists,envs,username,types,id])
-
     scheduler.add_job(do_task_jobs,"cron",id= id,replace_existing= True,year= year,month= month,day= day,
                       hour= hour,minute= minute,args= [lists,envs,username,types,id])
     # 单次任务不会有执行记录，创建JobExecuted用于储存
@@ -194,11 +192,11 @@ def do_task_jobs(lists,envs,username,types,id):
         if types== 0:
             logger.info(" " * 50)
             logger.info("######### 已经获取到用例，开始进行批量执行 #########")
-            case_task.delay(test_list, server_address, username)
+            case_task.delay(test_list, server_address, username,id)
         else:
             logger.info(" " * 50)
             logger.info("######### 已经获取到集合，开始进行批量执行 #########")
-            suite_task.delay(test_list, server_address, username)
+            suite_task.delay(test_list, server_address, username,id)
     else:
         logger.info(" " * 50)
         logger.info({"code": 404, "msg": "提交的测试用例or集合为空！"})
@@ -315,8 +313,7 @@ def test_case(request):
             jbe.status= 0
             jbe.save()
 
-            return redirect(reverse("main_platform:test_execute"))
-
+            return redirect(reverse("main_platform:test_execute",kwargs= {"jobid":"None"}))
 
 @login_required
 def down_test_template(request):
@@ -592,7 +589,7 @@ def test_suite(request):
             jbe.user= request.user.username
             jbe.status= 0
             jbe.save()
-            return redirect(reverse("main_platform:test_execute"))
+            return redirect(reverse("main_platform:test_execute",kwargs= {"jobid":"None"}))
 
 
 @login_required
@@ -668,12 +665,24 @@ def view_or_delete_cases_in_suite(request,suiteid):
 
 
 @login_required
-def test_execute(request):
-    '''主页-执行结果'''
-    test_execute= TestExecute.objects.filter().order_by("-id")
-    data= {
-        "pages": get_paginator(request, test_execute),  # 返回分页
-    }
+def test_execute(request,jobid):
+    '''
+    主页-执行结果
+    :param request:
+    :param jobid: 加入任务查看
+    :return:
+    '''
+    if jobid== "None":
+        test_execute= TestExecute.objects.filter().order_by("-id")
+        data= {
+            "pages": get_paginator(request, test_execute),  # 返回分页
+        }
+    else:
+        test_execute= TestExecute.objects.get(job_id= jobid)
+        test_execute1= [test_execute]
+        data= {
+            "pages": get_paginator(request, test_execute1),  # 返回分页
+        }
     return render(request, "test_execute.html", data)
 
 
@@ -843,20 +852,23 @@ def project_test_case_statistics(request,project_id):
 
 @login_required
 def job_execute(request):
-
-
+    '''
+    主页-定时任务列表
+    :param request:
+    :return:
+    '''
     if request.method== "POST":
         # 如果为post请求
         job_name= request.POST.get("job_name")
         if job_name== "":
-            # 未输入直接点击查询，返回所有模块
+            # 未输入直接点击查询，返回所有任务
             job_name= ""
-            jobs= Project.objects.order_by("-create_time")
+            jobs= JobExecuted.objects.order_by("-id")
         else:
-            jobs= Project.objects.filter(name__contains= job_name).order_by("-create_time") # 模糊查询所有项目名
+            jobs= JobExecuted.objects.filter(job_id__contains= job_name).order_by("-id") # 模糊查询所有任务名
     else:
         job_name= ""
-        jobs= Project.objects.order_by("-create_time") # 根据创建时间倒序
+        jobs= JobExecuted.objects.order_by("-id")
 
     data= {
         "pages": get_paginator(request, jobs),  # 返回分页
@@ -865,7 +877,7 @@ def job_execute(request):
     return render(request, "job_execute.html", data)
 
 
-@register_job(scheduler, "interval", seconds= 15,id= "synchronous_jobs",replace_existing= True)
+@register_job(scheduler, "interval", seconds= 60,id= "synchronous_jobs",replace_existing= True)
 def synchronous_jobs():
     '''
     定时任务，同步 atp_job_executed & django_apscheduler_djangojob，处理异常结果
@@ -900,8 +912,7 @@ def synchronous_jobs():
     logger.info("同步完成！")
 
 
-# @login_required
-@csrf_exempt
+@login_required
 def change_job_status(request,id,status):
     '''
     主页-定时任务-修改任务状态
@@ -928,6 +939,14 @@ def change_job_status(request,id,status):
             return JsonResponse(data= {"msg":"修改状态完成","code":200})
 
 
+@csrf_exempt
+def get_job_name(request):
+    print(request.GET.get("ex_time"))
+    print(12312312312312312312312231)
+    return JsonResponse({"msg":"ok"})
+
+
+
 scheduler.start()
 '''
 Apscheduler报错问题，因为在uwsgi是启用的多进程，然后每个进程中都存在一个执行器的实例，
@@ -937,4 +956,3 @@ Apscheduler报错问题，因为在uwsgi是启用的多进程，然后每个进�
 '''
 
 
-定时任务同步表已完成，该写前端

@@ -92,6 +92,7 @@ class TestExecute(models.Model):
     type= models.IntegerField(default= 0) # 0代表用例，1代表集合
     case_or_suite_ids= models.CharField(max_length= 1024) # 用于保存执行的用例/集合结果表id
     download_report_path= models.CharField(max_length= 1024) # 报告路径
+    job_id= models.CharField(max_length= 128, null= True) # 关联的任务id
 
     class Meta:
         db_table= "atp_test_execute"

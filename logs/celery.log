@@ -336,3 +336,1009 @@ KeyError: 'current_id_171'
 2023-05-08 17:33:05,943 "views:synchronous_jobs:901" [INFO]- 同步完成！
 2023-05-08 17:33:20,943 "views:synchronous_jobs:899" [INFO]-                                                   
 2023-05-08 17:33:20,943 "views:synchronous_jobs:900" [INFO]- 同步完成！
+2023-05-09 16:31:23,092 "views:synchronous_jobs:899" [INFO]-                                                   
+2023-05-09 16:31:23,093 "views:synchronous_jobs:900" [INFO]- 同步完成！
+2023-05-09 16:31:23,092 "views:synchronous_jobs:899" [INFO]-                                                   
+2023-05-09 16:31:23,093 "views:synchronous_jobs:900" [INFO]- 同步完成！
+2023-05-09 16:32:37,474 "views:synchronous_jobs:899" [INFO]-                                                   
+2023-05-09 16:32:37,474 "views:synchronous_jobs:900" [INFO]- 同步完成！
+2023-05-09 16:33:37,482 "views:synchronous_jobs:899" [INFO]-                                                   
+2023-05-09 16:33:37,482 "views:synchronous_jobs:900" [INFO]- 同步完成！
+2023-05-09 16:34:37,470 "views:synchronous_jobs:899" [INFO]-                                                   
+2023-05-09 16:34:37,470 "views:synchronous_jobs:900" [INFO]- 同步完成！
+2023-05-09 16:35:37,471 "views:synchronous_jobs:899" [INFO]-                                                   
+2023-05-09 16:35:37,471 "views:synchronous_jobs:900" [INFO]- 同步完成！
+2023-05-09 16:45:00,429 "views:synchronous_jobs:902" [INFO]-                                                   
+2023-05-09 16:45:00,430 "views:synchronous_jobs:903" [INFO]- 同步完成！
+2023-05-09 16:47:31,686 "views:synchronous_jobs:902" [INFO]-                                                   
+2023-05-09 16:47:31,686 "views:synchronous_jobs:903" [INFO]- 同步完成！
+2023-05-09 16:49:24,082 "views:synchronous_jobs:902" [INFO]-                                                   
+2023-05-09 16:49:24,083 "views:synchronous_jobs:903" [INFO]- 同步完成！
+2023-05-09 16:50:24,102 "views:synchronous_jobs:902" [INFO]-                                                   
+2023-05-09 16:50:24,102 "views:synchronous_jobs:903" [INFO]- 同步完成！
+2023-05-09 17:41:37,386 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-09 17:41:37,387 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-09 17:41:37,391 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-09 17:41:37,391 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-09 17:42:37,395 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-09 17:42:37,395 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-09 17:42:37,396 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-09 17:42:37,396 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-09 17:43:37,373 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-09 17:43:37,373 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-09 17:44:00,011 "views:do_task_jobs:199" [INFO]-                                                   
+2023-05-09 17:44:00,011 "views:do_task_jobs:200" [INFO]- ######### 已经获取到集合，开始进行批量执行 #########
+2023-05-09 17:44:00,063 "tasks:setUp:52" [INFO]-                                                   
+2023-05-09 17:44:00,065 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，get测试】##########
+2023-05-09 17:44:00,068 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-05-09 17:44:00,068 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-05-09 17:44:00,069 "tasks:setUp:78" [INFO]- 接口名称:/atp/get_test/
+2023-05-09 17:44:00,070 "tasks:setUp:80" [INFO]- 请求方法:get
+2023-05-09 17:44:00,071 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-05-09 17:44:00,071 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":123}
+2023-05-09 17:44:00,072 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-09 17:44:00,073 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-09 17:44:00,076 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-09 17:44:00,090 "process_data:request_process:49" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/?id=1&name=123
+2023-05-09 17:44:00,091 "process_data:request_process:50" [INFO]- 请求数据:{"id":1,"name":123}
+2023-05-09 17:44:00,092 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "get查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "123", "method": "get"}
+2023-05-09 17:44:00,093 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-09 17:44:00,093 "tasks:tearDown:195" [INFO]- 用例【无入参，无出参，get测试】执行成功！
+2023-05-09 17:44:00,097 "tasks:setUp:52" [INFO]-                                                   
+2023-05-09 17:44:00,099 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，有出参】##########
+2023-05-09 17:44:00,102 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-05-09 17:44:00,103 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-05-09 17:44:00,103 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-09 17:44:00,104 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-09 17:44:00,104 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-09 17:44:00,105 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-09 17:44:00,106 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-09 17:44:00,107 "tasks:setUp:88" [INFO]- 提取参数:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-05-09 17:44:00,109 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-09 17:44:00,116 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-09 17:44:00,116 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-09 17:44:00,117 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-09 17:44:00,118 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-09 17:44:00,119 "process_data:get_var_from_response:114" [INFO]- 变量公式:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-05-09 17:44:00,120 "process_data:get_var_from_response:121" [INFO]- 变量名称:code
+2023-05-09 17:44:00,120 "process_data:get_var_from_response:123" [INFO]- 提取正则:"code": (\d+)
+2023-05-09 17:44:00,121 "process_data:get_var_from_response:121" [INFO]- 变量名称:ip
+2023-05-09 17:44:00,122 "process_data:get_var_from_response:123" [INFO]- 提取正则:"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-05-09 17:44:00,123 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_160": {"code": "200", "ip": "192.168.31.205"}}
+2023-05-09 17:44:00,124 "tasks:tearDown:195" [INFO]- 用例【无入参，有出参】执行成功！
+2023-05-09 17:44:00,127 "tasks:setUp:52" [INFO]-                                                   
+2023-05-09 17:44:00,129 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，有出参】##########
+2023-05-09 17:44:00,131 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-05-09 17:44:00,132 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-05-09 17:44:00,132 "tasks:setUp:78" [INFO]- 接口名称:/atp/get_test/
+2023-05-09 17:44:00,133 "tasks:setUp:80" [INFO]- 请求方法:get
+2023-05-09 17:44:00,133 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-05-09 17:44:00,134 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"${code}","ip":"${ip}"}
+2023-05-09 17:44:00,135 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-09 17:44:00,135 "tasks:setUp:88" [INFO]- 提取参数:method||"method": "(\w+)"
+2023-05-09 17:44:00,138 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-09 17:44:00,145 "process_data:request_process:49" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/?id=1&name=%E5%95%8A%E5%95%8A%E5%95%8A%E5%95%8A%E5%95%8A&code=200&ip=192.168.31.205
+2023-05-09 17:44:00,145 "process_data:request_process:50" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"200","ip":"192.168.31.205"}
+2023-05-09 17:44:00,146 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "get查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊", "method": "get"}
+2023-05-09 17:44:00,146 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-09 17:44:00,147 "process_data:get_var_from_response:114" [INFO]- 变量公式:method||"method": "(\w+)"
+2023-05-09 17:44:00,147 "process_data:get_var_from_response:121" [INFO]- 变量名称:method
+2023-05-09 17:44:00,148 "process_data:get_var_from_response:123" [INFO]- 提取正则:"method": "(\w+)"
+2023-05-09 17:44:00,148 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_160": {"code": "200", "ip": "192.168.31.205"}, "current_id_161": {"method": "get"}}
+2023-05-09 17:44:00,149 "tasks:tearDown:195" [INFO]- 用例【有入参，有出参】执行成功！
+2023-05-09 17:44:00,151 "tasks:setUp:52" [INFO]-                                                   
+2023-05-09 17:44:00,153 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-09 17:44:00,155 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-05-09 17:44:00,156 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-05-09 17:44:00,157 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-09 17:44:00,157 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-09 17:44:00,157 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-09 17:44:00,158 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-09 17:44:00,159 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-09 17:44:00,160 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-09 17:44:00,162 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-09 17:44:00,169 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-09 17:44:00,169 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"get"}
+2023-05-09 17:44:00,170 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-09 17:44:00,170 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-09 17:44:00,171 "tasks:tearDown:195" [INFO]- 用例【有入参，无出参】执行成功！
+2023-05-09 17:44:00,173 "tasks:setUp:52" [INFO]-                                                   
+2023-05-09 17:44:00,175 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，多错误断言】##########
+2023-05-09 17:44:00,178 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-05-09 17:44:00,179 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-05-09 17:44:00,179 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-09 17:44:00,180 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-09 17:44:00,181 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-09 17:44:00,181 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-09 17:44:00,182 "tasks:setUp:86" [INFO]- 断言数据:"code": 200;"msg": "啊啊啊啊"
+2023-05-09 17:44:00,183 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-09 17:44:00,185 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-09 17:44:00,191 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-09 17:44:00,192 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-09 17:44:00,193 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-09 17:44:00,193 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-09 17:44:00,194 "tasks:testMethod:168" [INFO]- 断言关键字【"msg": "啊啊啊啊"】匹配失败
+2023-05-09 17:44:00,195 "tasks:tearDown:198" [INFO]- 用例【无入参，无出参，多错误断言】执行失败,请检查错误！
+2023-05-09 17:44:37,386 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-09 17:44:37,386 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-09 17:46:47,936 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-09 17:46:47,937 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-09 17:47:47,944 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-09 17:47:47,944 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-09 17:48:47,929 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-09 17:48:47,929 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-09 17:50:38,112 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-09 17:50:38,113 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-09 17:51:38,109 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-09 17:51:38,109 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:02:36,756 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:02:36,757 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:02:36,758 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:02:36,760 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:03:36,756 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:03:36,757 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:04:36,742 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:04:36,743 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:05:36,743 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:05:36,744 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:06:36,743 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:06:36,744 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:07:36,738 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:07:36,739 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:08:36,744 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:08:36,744 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:09:36,739 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:09:36,740 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:10:36,737 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:10:36,738 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:10:36,739 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:10:36,739 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:11:36,752 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:11:36,753 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:11:36,753 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:11:36,753 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:12:36,756 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:12:36,757 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:12:36,757 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:12:36,757 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:13:36,759 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:13:36,759 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:13:36,760 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:13:36,760 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:14:36,759 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:14:36,759 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:14:36,760 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:14:36,760 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:15:36,758 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:15:36,759 "views:synchronous_jobs:916" [INFO]-                                                   
+2023-05-10 11:15:36,759 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:15:36,759 "views:synchronous_jobs:917" [INFO]- 同步完成！
+2023-05-10 11:30:46,676 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:30:46,677 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:31:46,642 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:31:46,643 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:32:46,643 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:32:46,644 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:33:46,642 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:33:46,643 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:34:46,635 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:34:46,636 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:35:46,640 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:35:46,641 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:42:46,626 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:42:46,627 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:46:46,628 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:46:46,628 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:47:46,630 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:47:46,630 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:48:46,638 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:48:46,638 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:49:46,639 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:49:46,639 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 11:50:46,642 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 11:50:46,643 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:00:19,109 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:00:19,109 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:00:19,114 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:00:19,115 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:01:19,121 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:01:19,121 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:01:19,121 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:01:19,122 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:02:19,122 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:02:19,122 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:02:19,122 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:02:19,122 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:04:25,812 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:04:25,813 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:06:14,051 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:06:14,051 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:07:00,008 "views:do_task_jobs:201" [INFO]-                                                   
+2023-05-10 14:07:00,010 "views:do_task_jobs:202" [INFO]- {'code': 404, 'msg': '提交的测试用例or集合为空！'}
+2023-05-10 14:07:14,054 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:07:14,054 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:08:00,007 "views:do_task_jobs:201" [INFO]-                                                   
+2023-05-10 14:08:00,008 "views:do_task_jobs:202" [INFO]- {'code': 404, 'msg': '提交的测试用例or集合为空！'}
+2023-05-10 14:08:00,008 "views:do_task_jobs:201" [INFO]-                                                   
+2023-05-10 14:08:00,008 "views:do_task_jobs:202" [INFO]- {'code': 404, 'msg': '提交的测试用例or集合为空！'}
+2023-05-10 14:08:14,075 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:08:14,076 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:08:14,077 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:08:14,077 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:09:14,099 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:09:14,099 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:09:14,100 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:09:14,099 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:10:14,074 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:10:14,074 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:10:14,074 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:10:14,076 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:11:14,057 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:11:14,057 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:12:00,010 "views:do_task_jobs:201" [INFO]-                                                   
+2023-05-10 14:12:00,010 "views:do_task_jobs:201" [INFO]-                                                   
+2023-05-10 14:12:00,011 "views:do_task_jobs:202" [INFO]- {'code': 404, 'msg': '提交的测试用例or集合为空！'}
+2023-05-10 14:12:00,012 "views:do_task_jobs:202" [INFO]- {'code': 404, 'msg': '提交的测试用例or集合为空！'}
+2023-05-10 14:12:14,072 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:12:14,073 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:12:14,074 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:12:14,074 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:13:00,007 "views:do_task_jobs:201" [INFO]-                                                   
+2023-05-10 14:13:00,008 "views:do_task_jobs:202" [INFO]- {'code': 404, 'msg': '提交的测试用例or集合为空！'}
+2023-05-10 14:13:29,165 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:13:29,165 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:14:29,165 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:14:29,166 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:15:29,163 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:15:29,165 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:16:00,014 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:16:00,014 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:16:00,123 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:16:00,126 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:16:00,130 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:16:00,130 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:16:00,131 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:16:00,133 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:16:00,134 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:16:00,135 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:16:00,136 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:16:00,137 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:16:00,140 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:16:00,144 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:16:29,185 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:16:29,185 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:16:29,186 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:16:29,186 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:17:29,181 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:17:29,182 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:17:29,182 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:17:29,183 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:18:29,184 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:18:29,184 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:18:29,184 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:18:29,185 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:19:29,185 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:19:29,185 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:19:29,185 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:19:29,185 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:20:29,181 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:20:29,182 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:20:29,182 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:20:29,183 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:21:29,184 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:21:29,184 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:21:29,184 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:21:29,185 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:22:29,179 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:22:29,179 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:22:29,180 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:22:29,180 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:23:37,038 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:23:37,040 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:24:45,682 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:24:45,682 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:25:45,689 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:25:45,689 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:26:45,678 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:26:45,679 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:27:45,677 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:27:45,678 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:28:45,679 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:28:45,679 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:29:45,678 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:29:45,678 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:30:45,683 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:30:45,683 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:31:45,680 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:31:45,680 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:32:45,678 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:32:45,679 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:33:45,677 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:33:45,678 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:34:45,675 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:34:45,676 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:35:45,680 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:35:45,680 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:36:45,678 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:36:45,679 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:37:00,009 "views:do_task_jobs:197" [INFO]-                                                   
+2023-05-10 14:37:00,010 "views:do_task_jobs:198" [INFO]- ######### 已经获取到集合，开始进行批量执行 #########
+2023-05-10 14:37:00,131 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:37:00,133 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，get测试】##########
+2023-05-10 14:37:00,139 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-05-10 14:37:00,140 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-05-10 14:37:00,141 "tasks:setUp:78" [INFO]- 接口名称:/atp/get_test/
+2023-05-10 14:37:00,141 "tasks:setUp:80" [INFO]- 请求方法:get
+2023-05-10 14:37:00,142 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-05-10 14:37:00,142 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":123}
+2023-05-10 14:37:00,143 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:37:00,143 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:37:00,146 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:37:00,223 "process_data:request_process:49" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/?id=1&name=123
+2023-05-10 14:37:00,224 "process_data:request_process:50" [INFO]- 请求数据:{"id":1,"name":123}
+2023-05-10 14:37:00,227 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "get查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "123", "method": "get"}
+2023-05-10 14:37:00,229 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:37:00,230 "tasks:tearDown:195" [INFO]- 用例【无入参，无出参，get测试】执行成功！
+2023-05-10 14:37:00,234 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:37:00,239 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，有出参】##########
+2023-05-10 14:37:00,245 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-05-10 14:37:00,246 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-05-10 14:37:00,247 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:37:00,248 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:37:00,250 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:37:00,251 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:37:00,252 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:37:00,254 "tasks:setUp:88" [INFO]- 提取参数:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-05-10 14:37:00,257 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:37:00,267 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:37:00,268 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:37:00,269 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-10 14:37:00,272 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:37:00,273 "process_data:get_var_from_response:114" [INFO]- 变量公式:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-05-10 14:37:00,275 "process_data:get_var_from_response:121" [INFO]- 变量名称:code
+2023-05-10 14:37:00,276 "process_data:get_var_from_response:123" [INFO]- 提取正则:"code": (\d+)
+2023-05-10 14:37:00,277 "process_data:get_var_from_response:121" [INFO]- 变量名称:ip
+2023-05-10 14:37:00,278 "process_data:get_var_from_response:123" [INFO]- 提取正则:"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-05-10 14:37:00,279 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_160": {"code": "200", "ip": "192.168.31.205"}}
+2023-05-10 14:37:00,280 "tasks:tearDown:195" [INFO]- 用例【无入参，有出参】执行成功！
+2023-05-10 14:37:00,283 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:37:00,285 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，有出参】##########
+2023-05-10 14:37:00,288 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-05-10 14:37:00,289 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-05-10 14:37:00,290 "tasks:setUp:78" [INFO]- 接口名称:/atp/get_test/
+2023-05-10 14:37:00,291 "tasks:setUp:80" [INFO]- 请求方法:get
+2023-05-10 14:37:00,291 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-05-10 14:37:00,292 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"${code}","ip":"${ip}"}
+2023-05-10 14:37:00,293 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:37:00,293 "tasks:setUp:88" [INFO]- 提取参数:method||"method": "(\w+)"
+2023-05-10 14:37:00,296 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:37:00,303 "process_data:request_process:49" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/?id=1&name=%E5%95%8A%E5%95%8A%E5%95%8A%E5%95%8A%E5%95%8A&code=200&ip=192.168.31.205
+2023-05-10 14:37:00,304 "process_data:request_process:50" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"200","ip":"192.168.31.205"}
+2023-05-10 14:37:00,304 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "get查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊", "method": "get"}
+2023-05-10 14:37:00,305 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:37:00,306 "process_data:get_var_from_response:114" [INFO]- 变量公式:method||"method": "(\w+)"
+2023-05-10 14:37:00,306 "process_data:get_var_from_response:121" [INFO]- 变量名称:method
+2023-05-10 14:37:00,307 "process_data:get_var_from_response:123" [INFO]- 提取正则:"method": "(\w+)"
+2023-05-10 14:37:00,307 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_160": {"code": "200", "ip": "192.168.31.205"}, "current_id_161": {"method": "get"}}
+2023-05-10 14:37:00,308 "tasks:tearDown:195" [INFO]- 用例【有入参，有出参】执行成功！
+2023-05-10 14:37:00,311 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:37:00,313 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:37:00,316 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-05-10 14:37:00,317 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-05-10 14:37:00,318 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:37:00,318 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:37:00,319 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:37:00,319 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:37:00,320 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:37:00,321 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:37:00,323 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:37:00,330 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:37:00,331 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"get"}
+2023-05-10 14:37:00,332 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-10 14:37:00,333 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:37:00,334 "tasks:tearDown:195" [INFO]- 用例【有入参，无出参】执行成功！
+2023-05-10 14:37:00,337 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:37:00,340 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，多错误断言】##########
+2023-05-10 14:37:00,344 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目4
+2023-05-10 14:37:00,345 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块4
+2023-05-10 14:37:00,346 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:37:00,346 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:37:00,347 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:37:00,348 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:37:00,349 "tasks:setUp:86" [INFO]- 断言数据:"code": 200;"msg": "啊啊啊啊"
+2023-05-10 14:37:00,350 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:37:00,353 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:37:00,361 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:37:00,362 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:37:00,362 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-10 14:37:00,363 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:37:00,364 "tasks:testMethod:168" [INFO]- 断言关键字【"msg": "啊啊啊啊"】匹配失败
+2023-05-10 14:37:00,364 "tasks:tearDown:198" [INFO]- 用例【无入参，无出参，多错误断言】执行失败,请检查错误！
+2023-05-10 14:37:45,673 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:37:45,673 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:38:00,008 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:38:00,009 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:38:00,057 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:38:00,058 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:38:00,061 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:38:00,062 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:38:00,062 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:38:00,063 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:38:00,063 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:38:00,063 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:38:00,064 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:38:00,064 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:38:00,065 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:38:00,067 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:38:45,686 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:38:45,687 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:39:45,685 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:39:45,685 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:40:45,683 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:40:45,684 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:41:00,011 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:41:00,012 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:41:00,022 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:41:00,025 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:41:00,027 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:41:00,028 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:41:00,028 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:41:00,029 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:41:00,029 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:41:00,030 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:41:00,030 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:41:00,031 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:41:00,032 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:41:00,034 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:41:45,681 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:41:45,682 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:43:00,014 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:43:00,015 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:43:00,019 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:43:00,020 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:43:00,029 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:43:00,032 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:43:00,036 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:43:00,037 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:43:00,037 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:43:00,038 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:43:00,039 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:43:00,039 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:43:00,040 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:43:00,040 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:43:00,041 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:43:00,044 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:43:00,107 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:43:00,109 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:43:00,112 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:43:00,113 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:43:00,114 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:43:00,115 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:43:00,122 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:43:00,123 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:43:00,124 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:43:00,124 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:43:00,125 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:43:00,132 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:43:26,006 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:43:26,006 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:44:00,014 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:44:00,015 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:44:00,019 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:44:00,019 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:44:00,029 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:44:00,032 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:44:00,035 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:44:00,036 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:44:00,037 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:44:00,039 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:44:00,040 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:44:00,040 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:44:00,041 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:44:00,042 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:44:00,043 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:44:00,046 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:44:00,097 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:44:00,098 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:44:00,101 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:44:00,102 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:44:00,102 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:44:00,103 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:44:00,103 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:44:00,104 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:44:00,104 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:44:00,105 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:44:00,105 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:44:00,107 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:44:32,924 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:44:32,925 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:44:32,926 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:44:32,926 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:45:00,017 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:45:00,017 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:45:00,096 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:45:00,098 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:45:00,101 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:45:00,102 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:45:00,102 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:45:00,103 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:45:00,103 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:45:00,104 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:45:00,104 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:45:00,105 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:45:00,105 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:45:00,108 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:45:49,429 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:45:49,430 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:46:49,432 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:46:49,432 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:47:00,012 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:47:00,012 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:47:00,022 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:47:00,024 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:47:00,028 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:47:00,028 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:47:00,029 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:47:00,029 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:47:00,030 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:47:00,030 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:47:00,031 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:47:00,031 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:47:00,032 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:47:00,034 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:47:49,434 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:47:49,434 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:48:00,011 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:48:00,011 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:48:00,021 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:48:00,023 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:48:00,026 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:48:00,027 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:48:00,027 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:48:00,028 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:48:00,029 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:48:00,029 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:48:00,030 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:48:00,031 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:48:00,031 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:48:00,033 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:48:49,433 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:48:49,433 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:49:49,433 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:49:49,433 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:50:49,429 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:50:49,430 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:51:49,434 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:51:49,435 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:52:49,434 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:52:49,435 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:53:00,012 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:53:00,014 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:53:00,037 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:53:00,039 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，单正确断言】##########
+2023-05-10 14:53:00,042 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:53:00,042 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:53:00,043 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:53:00,043 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:53:00,044 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,044 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,044 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:53:00,045 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:53:00,047 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:53:00,054 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,055 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,056 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-10 14:53:00,056 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:53:00,057 "tasks:tearDown:195" [INFO]- 用例【无入参，无出参，单正确断言】执行成功！
+2023-05-10 14:53:00,059 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:53:00,061 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，多正确断言】##########
+2023-05-10 14:53:00,064 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:53:00,064 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:53:00,065 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:53:00,065 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:53:00,066 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,066 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,067 "tasks:setUp:86" [INFO]- 断言数据:"code": 200;"msg": "查询成功"
+2023-05-10 14:53:00,067 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:53:00,069 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:53:00,076 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,077 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,078 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-10 14:53:00,079 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:53:00,079 "tasks:testMethod:174" [INFO]- 断言关键字【"msg": "查询成功"】匹配成功
+2023-05-10 14:53:00,079 "tasks:tearDown:195" [INFO]- 用例【无入参，无出参，多正确断言】执行成功！
+2023-05-10 14:53:00,082 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:53:00,083 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，错误断言】##########
+2023-05-10 14:53:00,086 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:53:00,087 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:53:00,088 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:53:00,089 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:53:00,090 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,091 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,091 "tasks:setUp:86" [INFO]- 断言数据:"code": 300
+2023-05-10 14:53:00,092 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:53:00,095 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:53:00,105 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,106 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,107 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-10 14:53:00,108 "tasks:testMethod:168" [INFO]- 断言关键字【"code": 300】匹配失败
+2023-05-10 14:53:00,109 "tasks:tearDown:198" [INFO]- 用例【无入参，无出参，错误断言】执行失败,请检查错误！
+2023-05-10 14:53:00,113 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:53:00,115 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，多错误断言】##########
+2023-05-10 14:53:00,118 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:53:00,119 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:53:00,120 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:53:00,120 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:53:00,121 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,121 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,122 "tasks:setUp:86" [INFO]- 断言数据:"code": 201;"msg": "查询成功"
+2023-05-10 14:53:00,123 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:53:00,125 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:53:00,131 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,132 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,133 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-10 14:53:00,134 "tasks:testMethod:168" [INFO]- 断言关键字【"code": 201】匹配失败
+2023-05-10 14:53:00,135 "tasks:tearDown:198" [INFO]- 用例【无入参，无出参，多错误断言】执行失败,请检查错误！
+2023-05-10 14:53:00,140 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:53:00,144 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，多错误断言】##########
+2023-05-10 14:53:00,147 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:53:00,147 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:53:00,148 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:53:00,149 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:53:00,149 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,150 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,150 "tasks:setUp:86" [INFO]- 断言数据:"code": 200;"msg": "啊啊啊啊"
+2023-05-10 14:53:00,151 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:53:00,154 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:53:00,161 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,161 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,162 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-10 14:53:00,163 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:53:00,163 "tasks:testMethod:168" [INFO]- 断言关键字【"msg": "啊啊啊啊"】匹配失败
+2023-05-10 14:53:00,164 "tasks:tearDown:198" [INFO]- 用例【无入参，无出参，多错误断言】执行失败,请检查错误！
+2023-05-10 14:53:00,166 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:53:00,168 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，get测试】##########
+2023-05-10 14:53:00,170 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:53:00,171 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:53:00,172 "tasks:setUp:78" [INFO]- 接口名称:/atp/get_test/
+2023-05-10 14:53:00,172 "tasks:setUp:80" [INFO]- 请求方法:get
+2023-05-10 14:53:00,173 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-05-10 14:53:00,174 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":123}
+2023-05-10 14:53:00,174 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:53:00,175 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:53:00,178 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:53:00,185 "process_data:request_process:49" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/?id=1&name=123
+2023-05-10 14:53:00,186 "process_data:request_process:50" [INFO]- 请求数据:{"id":1,"name":123}
+2023-05-10 14:53:00,186 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "get查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "123", "method": "get"}
+2023-05-10 14:53:00,187 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:53:00,187 "tasks:tearDown:195" [INFO]- 用例【无入参，无出参，get测试】执行成功！
+2023-05-10 14:53:00,189 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:53:00,191 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，无出参，put测试】##########
+2023-05-10 14:53:00,194 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:53:00,194 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:53:00,195 "tasks:setUp:78" [INFO]- 接口名称:/atp/put_test/
+2023-05-10 14:53:00,196 "tasks:setUp:80" [INFO]- 请求方法:put
+2023-05-10 14:53:00,196 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/put_test/
+2023-05-10 14:53:00,197 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"1111111"}
+2023-05-10 14:53:00,197 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:53:00,198 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:53:00,200 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:53:00,204 "process_data:request_process:89" [INFO]- 接口地址:http://192.168.31.205:8000/atp/put_test/
+2023-05-10 14:53:00,204 "process_data:request_process:90" [INFO]- 请求数据:{"id":1,"name":"1111111"}
+2023-05-10 14:53:00,205 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "put查询成功", "id": 1, "name": "name"}
+2023-05-10 14:53:00,205 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:53:00,206 "tasks:tearDown:195" [INFO]- 用例【无入参，无出参，put测试】执行成功！
+2023-05-10 14:53:00,208 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:53:00,210 "tasks:setUp:56" [INFO]- ######### 开始执行用例【无入参，有出参】##########
+2023-05-10 14:53:00,212 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:53:00,213 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:53:00,213 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:53:00,214 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:53:00,214 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,214 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,215 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:53:00,216 "tasks:setUp:88" [INFO]- 提取参数:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-05-10 14:53:00,218 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:53:00,225 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,226 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊"}
+2023-05-10 14:53:00,227 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-10 14:53:00,227 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:53:00,228 "process_data:get_var_from_response:114" [INFO]- 变量公式:code||"code": (\d+);ip||"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-05-10 14:53:00,228 "process_data:get_var_from_response:121" [INFO]- 变量名称:code
+2023-05-10 14:53:00,229 "process_data:get_var_from_response:123" [INFO]- 提取正则:"code": (\d+)
+2023-05-10 14:53:00,229 "process_data:get_var_from_response:121" [INFO]- 变量名称:ip
+2023-05-10 14:53:00,230 "process_data:get_var_from_response:123" [INFO]- 提取正则:"ip": "(((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3})"
+2023-05-10 14:53:00,230 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_170": {"code": "200", "ip": "192.168.31.205"}}
+2023-05-10 14:53:00,231 "tasks:tearDown:195" [INFO]- 用例【无入参，有出参】执行成功！
+2023-05-10 14:53:00,233 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:53:00,235 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，有出参】##########
+2023-05-10 14:53:00,237 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:53:00,238 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:53:00,238 "tasks:setUp:78" [INFO]- 接口名称:/atp/get_test/
+2023-05-10 14:53:00,239 "tasks:setUp:80" [INFO]- 请求方法:get
+2023-05-10 14:53:00,240 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-05-10 14:53:00,240 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"${code}","ip":"${ip}"}
+2023-05-10 14:53:00,241 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:53:00,242 "tasks:setUp:88" [INFO]- 提取参数:method||"method": "(\w+)"
+2023-05-10 14:53:00,244 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:53:00,251 "process_data:request_process:49" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/?id=1&name=%E5%95%8A%E5%95%8A%E5%95%8A%E5%95%8A%E5%95%8A&code=200&ip=192.168.31.205
+2023-05-10 14:53:00,251 "process_data:request_process:50" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"200","ip":"192.168.31.205"}
+2023-05-10 14:53:00,252 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "get查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊", "method": "get"}
+2023-05-10 14:53:00,253 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:53:00,253 "process_data:get_var_from_response:114" [INFO]- 变量公式:method||"method": "(\w+)"
+2023-05-10 14:53:00,254 "process_data:get_var_from_response:121" [INFO]- 变量名称:method
+2023-05-10 14:53:00,254 "process_data:get_var_from_response:123" [INFO]- 提取正则:"method": "(\w+)"
+2023-05-10 14:53:00,255 "process_data:get_var_from_response:134" [INFO]- 现全局变量:{"current_id_170": {"code": "200", "ip": "192.168.31.205"}, "current_id_171": {"method": "get"}}
+2023-05-10 14:53:00,255 "tasks:tearDown:195" [INFO]- 用例【有入参，有出参】执行成功！
+2023-05-10 14:53:00,257 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:53:00,260 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:53:00,263 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:53:00,264 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:53:00,264 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:53:00,265 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:53:00,265 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,266 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:53:00,267 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:53:00,267 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:53:00,269 "process_data:request_process:44" [INFO]- -------- 开始调用接口 --------
+2023-05-10 14:53:00,275 "process_data:request_process:69" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:53:00,276 "process_data:request_process:70" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"get"}
+2023-05-10 14:53:00,276 "tasks:setUp:145" [INFO]- 响应数据:{"code": 200, "msg": "查询成功", "server": {"id": 1, "env": "dev", "ip": "192.168.31.205", "port": "8000", "remark": "开发环境"}, "name": "啊啊啊啊啊"}
+2023-05-10 14:53:00,277 "tasks:testMethod:174" [INFO]- 断言关键字【"code": 200】匹配成功
+2023-05-10 14:53:00,278 "tasks:tearDown:195" [INFO]- 用例【有入参，无出参】执行成功！
+2023-05-10 14:53:49,430 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:53:49,430 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:54:49,490 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:54:49,490 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:55:49,429 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:55:49,430 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:57:00,010 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:57:00,011 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:57:00,026 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:57:00,026 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:57:00,033 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:57:00,037 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:57:00,043 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:57:00,044 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:57:00,046 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:57:00,047 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:57:00,050 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:57:00,051 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:57:00,051 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:57:00,052 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:57:00,054 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:57:00,060 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:57:00,173 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:57:00,175 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:57:00,179 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:57:00,180 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:57:00,181 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:57:00,182 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:57:00,184 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:57:00,185 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:57:00,187 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:57:00,188 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:57:00,189 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:57:00,193 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:57:06,474 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:57:06,474 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:57:06,475 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:57:06,475 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:58:00,015 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:58:00,016 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:58:00,025 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:58:00,028 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，有出参】##########
+2023-05-10 14:58:00,031 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:58:00,032 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:58:00,032 "tasks:setUp:78" [INFO]- 接口名称:/atp/get_test/
+2023-05-10 14:58:00,033 "tasks:setUp:80" [INFO]- 请求方法:get
+2023-05-10 14:58:00,033 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/get_test/
+2023-05-10 14:58:00,034 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","code":"${code}","ip":"${ip}"}
+2023-05-10 14:58:00,034 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:58:00,035 "tasks:setUp:88" [INFO]- 提取参数:method||"method": "(\w+)"
+2023-05-10 14:58:00,036 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_170'
+
+2023-05-10 14:58:00,038 "tasks:tearDown:198" [INFO]- 用例【有入参，有出参】执行失败,请检查错误！
+2023-05-10 14:58:06,461 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:58:06,461 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:58:06,461 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:58:06,461 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:59:00,012 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 14:59:00,013 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 14:59:00,021 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 14:59:00,024 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 14:59:00,027 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 14:59:00,027 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 14:59:00,028 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 14:59:00,028 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 14:59:00,029 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 14:59:00,030 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 14:59:00,031 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 14:59:00,031 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 14:59:00,032 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 14:59:00,035 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 14:59:06,456 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:59:06,456 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 14:59:06,456 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 14:59:06,456 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:00:00,012 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 15:00:00,012 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 15:00:00,021 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 15:00:00,024 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 15:00:00,026 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 15:00:00,027 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 15:00:00,027 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 15:00:00,028 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 15:00:00,028 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 15:00:00,029 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 15:00:00,029 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 15:00:00,030 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 15:00:00,030 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 15:00:00,033 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 15:00:06,454 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:00:06,455 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:00:06,455 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:00:06,455 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:01:06,460 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:01:06,460 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:01:06,460 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:01:06,460 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:02:06,442 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:02:06,442 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:03:00,012 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 15:03:00,017 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 15:03:00,027 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 15:03:00,029 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 15:03:00,032 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 15:03:00,033 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 15:03:00,033 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 15:03:00,034 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 15:03:00,034 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 15:03:00,035 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 15:03:00,036 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 15:03:00,036 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 15:03:00,038 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 15:03:00,040 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 15:03:06,446 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:03:06,446 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:04:06,445 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:04:06,446 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:05:00,020 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 15:05:00,020 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 15:05:00,093 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 15:05:00,095 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 15:05:00,098 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 15:05:00,098 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 15:05:00,099 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 15:05:00,099 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 15:05:00,100 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 15:05:00,101 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 15:05:00,102 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 15:05:00,103 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 15:05:00,104 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 15:05:00,106 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 15:06:14,875 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:06:14,875 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:07:14,878 "views:synchronous_jobs:911" [INFO]-                                                   
+2023-05-10 15:07:14,878 "views:synchronous_jobs:912" [INFO]- 同步完成！
+2023-05-10 15:08:00,015 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 15:08:00,016 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 15:08:00,073 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 15:08:00,075 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 15:08:00,078 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 15:08:00,078 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 15:08:00,079 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 15:08:00,079 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 15:08:00,080 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 15:08:00,080 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 15:08:00,081 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 15:08:00,081 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 15:08:00,082 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 15:08:00,084 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 15:08:14,881 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:08:14,882 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:09:00,009 "views:do_task_jobs:193" [INFO]-                                                   
+2023-05-10 15:09:00,014 "views:do_task_jobs:194" [INFO]- ######### 已经获取到用例，开始进行批量执行 #########
+2023-05-10 15:09:00,031 "tasks:setUp:52" [INFO]-                                                   
+2023-05-10 15:09:00,034 "tasks:setUp:56" [INFO]- ######### 开始执行用例【有入参，无出参】##########
+2023-05-10 15:09:00,037 "tasks:setUp:74" [INFO]- 所属项目:这是一个测试项目6
+2023-05-10 15:09:00,038 "tasks:setUp:76" [INFO]- 所属模块:这是一个测试模块6
+2023-05-10 15:09:00,039 "tasks:setUp:78" [INFO]- 接口名称:/atp/post_test/
+2023-05-10 15:09:00,039 "tasks:setUp:80" [INFO]- 请求方法:post
+2023-05-10 15:09:00,040 "tasks:setUp:82" [INFO]- 接口地址:http://192.168.31.205:8000/atp/post_test/
+2023-05-10 15:09:00,041 "tasks:setUp:84" [INFO]- 请求数据:{"id":1,"name":"啊啊啊啊啊","method":"${method}"}
+2023-05-10 15:09:00,042 "tasks:setUp:86" [INFO]- 断言数据:"code": 200
+2023-05-10 15:09:00,042 "tasks:setUp:88" [INFO]- 提取参数:None
+2023-05-10 15:09:00,044 "process_data:preprocess_request_data:32" [INFO]- 请求数据预处理发生异常，error：Traceback (most recent call last):
+  File "/Users/violet/Desktop/kevin/MyLearn/Django/AutoTestPlatform/utils/process_data.py", line 21, in preprocess_request_data
+    global_var= json.loads(os.environ[global_key])[related_cid]
+KeyError: 'current_id_171'
+
+2023-05-10 15:09:00,049 "tasks:tearDown:198" [INFO]- 用例【有入参，无出参】执行失败,请检查错误！
+2023-05-10 15:09:14,892 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:09:14,892 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:09:14,893 "views:synchronous_jobs:911" [INFO]-                                                   
+2023-05-10 15:09:14,893 "views:synchronous_jobs:912" [INFO]- 同步完成！
+2023-05-10 15:10:14,893 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:10:14,894 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:11:14,904 "views:synchronous_jobs:911" [INFO]-                                                   
+2023-05-10 15:11:14,905 "views:synchronous_jobs:912" [INFO]- 同步完成！
+2023-05-10 15:12:14,886 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:12:14,887 "views:synchronous_jobs:913" [INFO]- 同步完成！
+2023-05-10 15:13:14,873 "views:synchronous_jobs:911" [INFO]-                                                   
+2023-05-10 15:13:14,873 "views:synchronous_jobs:912" [INFO]- 同步完成！
+2023-05-10 15:14:14,879 "views:synchronous_jobs:912" [INFO]-                                                   
+2023-05-10 15:14:14,879 "views:synchronous_jobs:911" [INFO]-                                                   
+2023-05-10 15:14:14,879 "views:synchronous_jobs:912" [INFO]- 同步完成！
+2023-05-10 15:14:14,879 "views:synchronous_jobs:913" [INFO]- 同步完成！
