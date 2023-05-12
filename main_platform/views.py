@@ -305,15 +305,26 @@ def test_case(request):
         else:
             env= request.POST.get("env")
             test_case_list= request.POST.getlist("testcases_list")
-            register_jobs(test_case_list,env,request.user.username,0,"test_job0_%s"%ex_time,year,month,day,hour,minute)
+            if len(test_case_list)== 0:
+                # 解决传空用例的问题
+                cases= TestCase.objects.filter(status=0).order_by("-create_time")  # 根据创建时间倒序
+                data= {}
+                data["pages"]= get_paginator(request, cases)
+                data["case_name"]= ""
+                return render(request, "test_case.html", data)
+            else:
+                if JobExecuted.objects.filter(job_id= "test_job0_%s"%ex_time).first():
+                    pass # 解决重复任务名的问题
+                else:
+                    register_jobs(test_case_list,env,request.user.username,0,"test_job0_%s"%ex_time,
+                                  year,month,day,hour,minute)
+                    jbe= JobExecuted()  # 记录定时任务
+                    jbe.job_id= "test_job0_%s" % ex_time
+                    jbe.user= request.user.username
+                    jbe.status= 0
+                    jbe.save()
+                return redirect(reverse("main_platform:test_execute",kwargs= {"jobid":"None"}))
 
-            jbe= JobExecuted()  # 记录定时任务
-            jbe.job_id= "test_job0_%s" % ex_time
-            jbe.user= request.user.username
-            jbe.status= 0
-            jbe.save()
-
-            return redirect(reverse("main_platform:test_execute",kwargs= {"jobid":"None"}))
 
 @login_required
 def down_test_template(request):
@@ -941,11 +952,19 @@ def change_job_status(request,id,status):
 
 @csrf_exempt
 def get_job_name(request):
-    print(request.GET.get("ex_time"))
-    print(12312312312312312312312231)
-    return JsonResponse({"msg":"ok"})
+    ex_time= request.GET.get("ex_time")
+    type= request.GET.get("type")
+    if ex_time== "":
+        ex_time= (datetime.datetime.now() + datetime.timedelta(minutes= 1)).strftime("%Y-%m-%dT%H:%M")
+    job_name= "test_job%s_%s"%(str(type),ex_time)
+    try:
+        jbe= JobExecuted.objects.get(job_id= job_name)
+        return JsonResponse({"msg":"存在相同任务名%s"%jbe,"status":2001})
+    except:
+        return JsonResponse({"msg": "不存在相同任务名", "status": 2000})
 
 
+# 接着把用了集合也改好，同名任务判断
 
 scheduler.start()
 '''
