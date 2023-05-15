@@ -17,14 +17,31 @@ function selectOrCancelAll() {
 }
 
 function ischecked() {
-    var $allCheck = document.getElementsByName("testsuite_list");
-    //遍历每一个复选框，为true则上传
-    for (var i = 0; i < $allCheck.length; i++) {
-            if ($allCheck[i].checked === true) {
-                alert("点击确认执行用例，跳转至执行结果页等待");
-                return true;
+    var $ex_suite = document.getElementsByName("ex_suite");
+    var $ex_time = document.getElementsByName("ex_time").item(0).value;
+
+    if ($ex_suite) {
+        $.getJSON("/atp/test_suite/atp/get_job_name/", {"ex_time": $ex_time, "type": 1}, function (data) {
+            if (data["status"] === 2001) {
+                alert("可能存在同名任务，请一分钟后再试");
+                // 重复任务但未勾选用例的情况，导致判重与勾选判断相互调用，以判重优先
+            } else {
+                var $allCheck = document.getElementsByName("testsuite_list");
+                //遍历每一个复选框，为true则上传
+                var checks = false;
+
+                for (var i = 0; i < $allCheck.length; i++) {
+                    if ($allCheck[i].checked === true) {
+                        alert("点击确认执行集合，跳转至执行结果页等待");
+                        checks= true;
+                        return true;
+                    }
+                }
+
+                if (checks=== false){
+                    alert("请选择要执行的测试集合");
+                }
             }
-        }
-    alert("请选择要执行的测试集合");
-    return false;
+        })
+    }
 }

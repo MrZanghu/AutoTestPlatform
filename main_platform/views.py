@@ -593,14 +593,25 @@ def test_suite(request):
         else:
             env= request.POST.get("env")
             test_suite_list= request.POST.getlist("testsuite_list")
-            register_jobs(test_suite_list,env,request.user.username,1,"test_job1_%s"%ex_time,year,month,day,hour,minute)
-
-            jbe= JobExecuted()  # 记录定时任务
-            jbe.job_id= "test_job1_%s"%ex_time
-            jbe.user= request.user.username
-            jbe.status= 0
-            jbe.save()
-            return redirect(reverse("main_platform:test_execute",kwargs= {"jobid":"None"}))
+            if len(test_suite_list)== 0:
+                # 解决传空用例的问题
+                test_suite= TestSuite.objects.filter(status= 0).order_by("-create_time")
+                data= {
+                    "pages": get_paginator(request, test_suite),  # 返回分页
+                }
+                return render(request, "test_suite.html", data)
+            else:
+                if JobExecuted.objects.filter(job_id= "test_job1_%s"%ex_time).first():
+                    pass # 解决重复任务名的问题
+                else:
+                    register_jobs(test_suite_list,env,request.user.username,1,"test_job1_%s"%ex_time,
+                                  year,month,day,hour,minute)
+                    jbe= JobExecuted()  # 记录定时任务
+                    jbe.job_id= "test_job1_%s" % ex_time
+                    jbe.user= request.user.username
+                    jbe.status= 0
+                    jbe.save()
+                return redirect(reverse("main_platform:test_execute",kwargs= {"jobid":"None"}))
 
 
 @login_required
@@ -964,7 +975,6 @@ def get_job_name(request):
         return JsonResponse({"msg": "不存在相同任务名", "status": 2000})
 
 
-# 接着把用了集合也改好，同名任务判断
 
 scheduler.start()
 '''

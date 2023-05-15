@@ -66,5 +66,6 @@ urlpatterns= [
     re_path(r'^change_job_status/(?P<id>([\s\S]*))/(?P<status>\d+)/',
             views.change_job_status, name= "change_job_status"),
     path(r'test_case/atp/get_job_name/',views.get_job_name, name= "get_job_name"),
+    path(r'test_suite/atp/get_job_name/',views.get_job_name, name= "get_job_name"),
     # 任务相关
 ]
