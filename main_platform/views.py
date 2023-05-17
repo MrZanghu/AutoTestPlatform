@@ -17,6 +17,7 @@ from main_platform.models import Project, Module, TestCase,\
     TestSuite, AddCaseIntoSuite, Server, UpLoadsCaseTemplate, \
     TestCaseExecuteResult,TestExecute,TestSuiteExecuteRecord,\
     TestSuiteTestCaseExecuteRecord,JobExecuted
+from django.db.models import Q
 from apscheduler.schedulers.background import BackgroundScheduler
 from django_apscheduler.jobstores import DjangoJobStore,register_job
 
@@ -201,6 +202,55 @@ def do_task_jobs(lists,envs,username,types,id):
         logger.info(" " * 50)
         logger.info({"code": 404, "msg": "提交的测试用例or集合为空！"})
         return
+
+
+@register_job(scheduler, "interval", seconds= 60,id= "synchronous_jobs",replace_existing= True)
+def synchronous_jobs():
+    '''
+    定时任务，同步 atp_job_executed & django_apscheduler_djangojob，处理异常结果
+    :return:null
+    '''
+    jobs= []
+    for i in scheduler.get_jobs(): # 读取aps表
+        jobs.append(i.id)
+    jobs.remove("synchronous_jobs")
+    jobs_exe= [x for x in JobExecuted.objects.all()]
+
+    for je in jobs_exe:
+        if je.job_id not in jobs: # aps表内无此任务 1/2
+            if je.status== 0:
+                je.status= 1
+                je.save()
+            elif je.status== 3:
+                je.status= 1
+                je.save()
+            else:
+                pass
+        else: # aps表内有此任务 0/3
+            if je.status== 1:
+                je.status= 0
+                je.save()
+            elif je.status== 2:
+                je.status= 0
+                je.save()
+            else:
+                pass
+    logger.info(" " * 50)
+    logger.info("同步完成！")
+
+
+@csrf_exempt
+def get_job_name(request):
+    ex_time= request.GET.get("ex_time")
+    type= request.GET.get("type")
+    if ex_time== "":
+        ex_time= (datetime.datetime.now() + datetime.timedelta(minutes= 1)).strftime("%Y-%m-%dT%H:%M")
+    job_name= "test_job%s_%s"%(str(type),ex_time)
+    try:
+        jbe= JobExecuted.objects.get(job_id= job_name)
+        return JsonResponse({"msg":"存在相同任务名%s"%jbe,"status":2001})
+    except:
+        return JsonResponse({"msg": "不存在相同任务名", "status": 2000})
 
 
 @login_required
@@ -885,53 +935,19 @@ def job_execute(request):
         if job_name== "":
             # 未输入直接点击查询，返回所有任务
             job_name= ""
-            jobs= JobExecuted.objects.order_by("-id")
+            jobs= JobExecuted.objects.filter(~Q(status= 2)).order_by("-id")
+            # Q方法用于过滤时的不等于方式
         else:
-            jobs= JobExecuted.objects.filter(job_id__contains= job_name).order_by("-id") # 模糊查询所有任务名
+            jobs= JobExecuted.objects.filter(~Q(status= 2)).filter(job_id__contains= job_name).order_by("-id") # 模糊查询所有任务名
     else:
         job_name= ""
-        jobs= JobExecuted.objects.order_by("-id")
+        jobs= JobExecuted.objects.filter(~Q(status= 2)).order_by("-id")
 
     data= {
         "pages": get_paginator(request, jobs),  # 返回分页
         "job_name": job_name,
     }
     return render(request, "job_execute.html", data)
-
-
-@register_job(scheduler, "interval", seconds= 60,id= "synchronous_jobs",replace_existing= True)
-def synchronous_jobs():
-    '''
-    定时任务，同步 atp_job_executed & django_apscheduler_djangojob，处理异常结果
-    :return:null
-    '''
-    jobs= []
-    for i in scheduler.get_jobs(): # 读取aps表
-        jobs.append(i.id)
-    jobs.remove("synchronous_jobs")
-    jobs_exe= [x for x in JobExecuted.objects.all()]
-
-    for je in jobs_exe:
-        if je.job_id not in jobs: # aps表内无此任务 1/2
-            if je.status== 0:
-                je.status= 1
-                je.save()
-            elif je.status== 3:
-                je.status= 1
-                je.save()
-            else:
-                pass
-        else: # aps表内有此任务 0/3
-            if je.status== 1:
-                je.status= 0
-                je.save()
-            elif je.status== 2:
-                je.status= 0
-                je.save()
-            else:
-                pass
-    logger.info(" " * 50)
-    logger.info("同步完成！")
 
 
 @login_required
@@ -943,11 +959,13 @@ def change_job_status(request,id,status):
     :param status:改变状态
     :return:
     '''
-    if request.method!= "POST":
-        return JsonResponse(data= {"msg":"错误的请求方式","code":404})
+    if request.method!= "GET":
+        pass
+        # return JsonResponse(data= {"msg":"错误的请求方式","code":404})
     else:
         if status not in vp.job_status:
-            return JsonResponse(data= {"msg":"错误的任务状态","code":404})
+            pass
+            # return JsonResponse(data= {"msg":"错误的任务状态","code":404})
         else:
             if status== "2": # 删除
                 scheduler.remove_job(job_id= id)
@@ -958,22 +976,8 @@ def change_job_status(request,id,status):
             job= JobExecuted.objects.get(job_id= id)
             job.status= status
             job.save()
-            return JsonResponse(data= {"msg":"修改状态完成","code":200})
-
-
-@csrf_exempt
-def get_job_name(request):
-    ex_time= request.GET.get("ex_time")
-    type= request.GET.get("type")
-    if ex_time== "":
-        ex_time= (datetime.datetime.now() + datetime.timedelta(minutes= 1)).strftime("%Y-%m-%dT%H:%M")
-    job_name= "test_job%s_%s"%(str(type),ex_time)
-    try:
-        jbe= JobExecuted.objects.get(job_id= job_name)
-        return JsonResponse({"msg":"存在相同任务名%s"%jbe,"status":2001})
-    except:
-        return JsonResponse({"msg": "不存在相同任务名", "status": 2000})
-
+            # return JsonResponse(data= {"msg":"修改状态完成","code":200})
+    return redirect(reverse("main_platform:job_execute"))
 
 
 scheduler.start()
