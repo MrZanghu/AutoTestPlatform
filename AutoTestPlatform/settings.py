@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'main_platform',
     'django_celery_results', # 用于异步任务
     'django_apscheduler',
+    'SendMail',
 ]
 
 MIDDLEWARE = [
@@ -194,3 +195,14 @@ LOGGING= {
     },
 }
 logging.config.dictConfig(LOGGING)
+
+EMAIL_HOST = 'smtp.qq.com'  # 发送方的smtp服务器地址
+EMAIL_PORT = 465    # smtp服务端口
+EMAIL_HOST_USER = '1058753233@qq.com'       # 发送方邮箱地址
+EMAIL_HOST_PASSWORD = 'espzoxhtcichbejj'   # 获得的授权码
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_SSL_CERTFILE = None
+EMAIL_SSL_KEYFILE = None
+EMAIL_TIMEOUT = None
+DEFAULT_FROM_EMAIL = '1058753233@qq.com'  # 和 EMAIL_HOST_USER  相同
