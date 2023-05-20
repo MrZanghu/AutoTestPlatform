@@ -239,6 +239,21 @@ class Server(models.Model):
         verbose_name_plural= "环境配置表"
 
 
+class EmailAddress(models.Model):
+    '''用来存测试环境/开发环境的测试报告收件人信息'''
+    id= models.AutoField(primary_key= True)
+    address= models.CharField("收件人", max_length= 256, null= True,help_text= "多个收件人使用英文;来分隔")
+    create_time= models.DateTimeField("创建时间", auto_now_add= True)
+
+    def __str__(self):
+        return self.address
+
+    class Meta:
+        db_table= "atp_email_address"
+        verbose_name= "报告收件人表"
+        verbose_name_plural= "报告收件人表"
+
+
 class JobExecuted(models.Model):
     id= models.AutoField(primary_key= True)
     job_id= models.CharField("任务名称",max_length= 128,null= False)

@@ -1,24 +1,24 @@
 from celery.result import AsyncResult
 from django.http import HttpResponse
-from SendMail.tasks import send_emails
+from send_mails.tasks import send_emails
 from main_platform import celery_app
 
 
 
-def email(request):
+def email_for_interface(address,report_id):
     '''
-    发送邮件
-    :param request:
+    发送邮件，内部接口
+    :param address:
+    :param report_id:
     :return:
     '''
-    mail_address= request.GET.get("address")
-    send_result= send_emails.delay(mail_address)
+    send_result= send_emails.delay(address,report_id)
     return HttpResponse(send_result)
 
 
 def get_result(request):
     '''
-    根据id查询查询结果
+    根据id查询查询结果，暂时不启用
     :param nid:
     :return:
     '''

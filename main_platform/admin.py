@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project,Module,TestCase,TestSuite,Server
+from .models import Project,Module,TestCase,TestSuite,Server,EmailAddress
 
 
 
@@ -32,8 +32,14 @@ class TestSuiteAdmin(admin.ModelAdmin):
 
 
 class ServerAdmin(admin.ModelAdmin):
-    '''用例集管理'''
+    '''环境管理'''
     list_display= ("id", "env", "ip", "port", "remark", "create_time")
+    list_per_page= 10
+
+
+class EmailAdmin(admin.ModelAdmin):
+    '''环境管理'''
+    list_display= ("id","address","create_time")
     list_per_page= 10
 
 
@@ -42,6 +48,7 @@ admin.site.register(Module,ModuleAdmin)
 admin.site.register(TestCase,TestCaseAdmin)
 admin.site.register(TestSuite,TestSuiteAdmin)
 admin.site.register(Server,ServerAdmin)
+admin.site.register(EmailAddress,EmailAdmin)
 
 
 admin.site.site_header= "自动化测试平台"

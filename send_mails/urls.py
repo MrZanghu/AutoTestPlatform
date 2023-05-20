@@ -1,10 +1,9 @@
 from django.conf.urls import url
-from SendMail import views
+from send_mails import views
 
 
 
 # app_name= "[UserAuthAndPermission]"
 urlpatterns= [
-    url(r'^email/', views.email),
     url(r'^get_result/', views.get_result),
 ]

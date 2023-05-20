@@ -9,6 +9,7 @@ from . import viewsParams as vp
 from BeautifulReport import BeautifulReport
 from django.contrib.auth.models import User
 from main_platform.celery import ex_cases_app
+from send_mails.views import email_for_interface
 from utils.process_data import request_process,get_var_from_response, preprocess_request_data,zip_file
 
 
@@ -253,6 +254,10 @@ def case_task(test_case_list:list, server_address, user,id):
     del os.environ[global_key]  # 执行完成，删除全局变量
 
 
+    address= models.EmailAddress.objects.get(id= 1).address.split(";")
+    email_for_interface(address,"接口测试报告"+time_+".html")
+
+
 @ex_cases_app.task
 def process_xls(up_times,owner,file_names):
     '''
@@ -467,3 +472,6 @@ def suite_task(test_suite_list:list,server_address, user,id):
     for i in ter:  # 对记录关联用例
         i.belong_test_execute= ate.id
         i.save()
+
+    address= models.EmailAddress.objects.get(id= 1).address.split(";")
+    email_for_interface(address,"接口测试报告"+suites_time_+".zip")

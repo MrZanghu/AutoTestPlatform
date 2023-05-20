@@ -987,6 +987,3 @@ Apscheduler报错问题，因为在uwsgi是启用的多进程，然后每个进�
 并且会报一个get() returned more than one %s – it returned %s的一个报错，
 其实这个报错的原因是因为：他使用的django的orm的get方法，因为get如果获取到的是多条而不是唯一就会报错
 '''
-
-
-# admin写个配置页面，执行结果页显示出是否推送邮件

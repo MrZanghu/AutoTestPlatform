@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'main_platform',
     'django_celery_results', # 用于异步任务
     'django_apscheduler',
-    'SendMail',
+    'send_mails',
 ]
 
 MIDDLEWARE = [
