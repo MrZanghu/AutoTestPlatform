@@ -456,7 +456,7 @@ def suite_task(test_suite_list:list,server_address, user,id):
             ts2.belong_test_suite_exe= tser.id
             ts2.save()
 
-        time.sleep(1) # 防止报告命名冲突
+        time.sleep(30) # 防止报告命名冲突
 
     zip_file("/report/","接口测试报告"+suites_time_,zipfiles)
 

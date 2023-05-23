@@ -12,7 +12,7 @@ def send_emails(recipient:list,report_id:str):
     :param recipient:收件人地址
     :return:
     '''
-    time.sleep(30)
+    time.sleep(10)
     emails= EmailMessage(
         subject= "自动化测试平台报告",
         body= "请下载附件查看测试结果",

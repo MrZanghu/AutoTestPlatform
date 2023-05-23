@@ -4,6 +4,10 @@ import traceback
 import requests,logging
 from json import JSONDecodeError
 from main_platform import viewsParams as vp
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+# 解决verify= False报错
+# 在Run中选择运行，防止pycharm使用单元测试框架运行脚本，导致数据错误
 
 
 
@@ -42,16 +46,29 @@ def request_process(url, request_method, request_data):
     :return:
     '''
     logger.info("-------- 开始调用接口 --------")
+
     if request_method== "get":
         try:
             rd= json.loads(request_data)    # json.loads将str转为dict，如果可以转换则使用params
-            result= requests.get(url, params= rd)
+
+            if url[:4]== "https":
+                headers= {"Content-Type": "application/json"}
+                result= requests.get(url= url,data= str(rd),headers= headers,verify= False)
+            else:
+                result= requests.get(url, params= rd)
+
             logger.info("接口地址:%s" % result.url)
             logger.info("请求数据:%s" % request_data)
             # raise ZeroDivisionError # 测试其他Exception使用
         except JSONDecodeError:
             rd= request_data
-            result= requests.get(url + str(rd))
+
+            if url[:4]== "https":
+                headers= {"Content-Type": "application/json"}
+                result= requests.get(url + str(rd),headers= headers,verify= False)
+            else:
+                result= requests.get(url + str(rd))
+
             logger.info("接口地址:%s" % result.url)
             logger.info("请求数据:%s" % request_data)
         except Exception as e:
@@ -65,7 +82,13 @@ def request_process(url, request_method, request_data):
     elif request_method== "post":
         try:
             rd= json.loads(request_data)    # json.loads将str转为dict
-            result= requests.post(url, data= rd)
+
+            if url[:4]== "https":
+                headers= {"Content-Type": "application/json"}
+                result= requests.post(url= url,data= rd,headers= headers,verify= False)
+            else:
+                result= requests.post(url, data= rd)
+                
             logger.info("接口地址:%s" % result.url)
             logger.info("请求数据:%s" % request_data)
             # raise ZeroDivisionError # 测试其他Exception使用
@@ -85,7 +108,13 @@ def request_process(url, request_method, request_data):
     elif request_method== "put":
         try:
             rd= json.loads(request_data)    # json.loads将str转为dict
-            result= requests.put(url, data= rd)
+            
+            if url[:4]== "https":
+                headers= {"Content-Type": "application/json"}
+                result= requests.put(url= url, data= rd, headers= headers, verify= False)
+            else:
+                result= requests.put(url, data= rd)
+                
             logger.info("接口地址:%s" % result.url)
             logger.info("请求数据:%s" % request_data)
             # raise ZeroDivisionError # 测试其他Exception使用

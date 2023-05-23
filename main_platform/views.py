@@ -141,11 +141,14 @@ def login(request):
 def get_server_address(env):
     '''测试用例-获取服务器地址'''
     if env:
-        env_data= Server.objects.filter(env= env)
+        env_data= Server.objects.get(env= env)
         if env_data:
-            ip= env_data[0].ip
-            port= env_data[0].port
-            server_address= "http://{}:{}".format(ip, port)
+            ip= env_data.ip
+            port= env_data.port
+            if env_data.is_https== 1:
+                server_address= "https://{}".format(ip)
+            else:
+                server_address= "http://{}:{}".format(ip, port)
             return server_address
         else:
             return None
@@ -676,7 +679,7 @@ def add_case_into_suite(request,suiteid):
     test_cases= [i.id for i in TestCase.objects.filter(status= 0).all()] # 查询出所有用例的id
     test_cases= list(filter(lambda x:x not in belong_suite_cases,test_cases))
     # lambda清除在所有用例中,已经关联过用例集的id
-    test_cases= TestCase.objects.filter(id__in= test_cases).order_by("id")
+    test_cases= TestCase.objects.filter(id__in= test_cases).order_by("-id")
     # 没有notin函数，所以使用此方法，去除用例重复添加的可能性
 
     if request.method== "GET":

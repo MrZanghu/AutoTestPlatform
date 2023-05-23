@@ -33,7 +33,7 @@ class TestSuiteAdmin(admin.ModelAdmin):
 
 class ServerAdmin(admin.ModelAdmin):
     '''环境管理'''
-    list_display= ("id", "env", "ip", "port", "remark", "create_time")
+    list_display= ("id", "env", "ip", "port","is_https" ,"remark", "create_time")
     list_per_page= 10
 
 
