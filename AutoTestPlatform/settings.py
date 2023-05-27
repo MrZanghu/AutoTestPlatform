@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_platform',
+    'send_mails',
+    'selenium_apps',
     'django_celery_results', # 用于异步任务
     'django_apscheduler',
-    'send_mails',
 ]
 
 MIDDLEWARE = [
