@@ -135,7 +135,7 @@ def login(request):
 
     elif request.method== "GET":
         login_form= UserForm()
-        return render(request,"login.html",locals())
+        return render(request,"atp/login.html",locals())
 
 
 def get_server_address(env):
@@ -260,7 +260,7 @@ def get_job_name(request):
 def index(request):
     '''主页'''
     # login_required，这种方式可以实现未登录禁止访问首页的功能
-    return render(request,"index.html")
+    return render(request,"atp/index.html")
 
 
 @login_required
@@ -291,7 +291,7 @@ def project(request):
         "pages": get_paginator(request, projects), # 返回分页
         "proj_name":proj_name,
     }
-    return render(request,"project.html",data)
+    return render(request,"atp/project.html",data)
 
 
 @login_required
@@ -318,7 +318,7 @@ def module(request):
         "pages": get_paginator(request, modules),
         "proj_name":proj_name,
     }
-    return render(request,"module.html",data)
+    return render(request,"atp/module.html",data)
 
 
 @login_required
@@ -330,7 +330,7 @@ def test_case(request):
         data= {}
         data["pages"]= get_paginator(request, cases)
         data["case_name"]= ""
-        return render(request, "test_case.html", data)
+        return render(request, "atp/test_case.html", data)
 
     elif request.method== "POST":
         case_name= request.POST.get("case_name")
@@ -354,7 +354,7 @@ def test_case(request):
                 cases= TestCase.objects.filter(case_name__contains= case_name,status= 0).order_by("-create_time")
             data["pages"]= get_paginator(request, cases)
             data["case_name"]= case_name
-            return render(request, "test_case.html", data)
+            return render(request, "atp/test_case.html", data)
         else:
             env= request.POST.get("env")
             test_case_list= request.POST.getlist("testcases_list")
@@ -364,7 +364,7 @@ def test_case(request):
                 data= {}
                 data["pages"]= get_paginator(request, cases)
                 data["case_name"]= ""
-                return render(request, "test_case.html", data)
+                return render(request, "atp/test_case.html", data)
             else:
                 if JobExecuted.objects.filter(job_id= "test_job0_%s"%ex_time).first():
                     pass # 解决重复任务名的问题
@@ -429,7 +429,7 @@ def up_test_template(request):
     data= {}
     data["pages"]= get_paginator(request, cases)
     data["case_name"]= ""
-    return render(request,"test_case.html",data)
+    return render(request,"atp/test_case.html",data)
 
 
 @login_required
@@ -445,7 +445,7 @@ def add_test_case(request):
         data["belong_project"]= belong_project
         data["belong_module"]= belong_module
         data["maintainer"]= str(request.user)
-        return render(request, "add_test_case.html",data)
+        return render(request, "atp/add_test_case.html",data)
 
     elif request.method== "POST":
         ts= TestCase()
@@ -481,7 +481,7 @@ def add_test_case(request):
         data= {}
         data["pages"]= get_paginator(request, cases)
         data["case_name"]= ""
-        return render(request, "test_case.html", data)
+        return render(request, "atp/test_case.html", data)
 
 
 def check_module_belong_project(request):
@@ -536,7 +536,7 @@ def update_test_case(request,caseid):
         data["user"]= user
         data["belong_project"]= belong_project
         data["belong_module"]= belong_module
-        return render(request,"update_test_case.html",data)
+        return render(request,"atp/update_test_case.html",data)
 
     elif request.method== "POST":
         case.case_name= request.POST.get("case_name")
@@ -590,9 +590,9 @@ def test_case_detail(request,caseid):
         data= {
             "test_case":detail
         }
-        return render(request,"test_case_detail.html",data)
+        return render(request,"atp/test_case_detail.html",data)
     except:
-        return render(request,"index.html") # 如果找不到就回到主页，防止出现程序
+        return render(request,"atp/index.html") # 如果找不到就回到主页，防止出现程序
 
 
 @login_required
@@ -607,7 +607,7 @@ def module_test_case(request,moduleid):
         "pages": get_paginator(request, cases), # 返回分页
         "case_name":"",
     }
-    return render(request,"test_case.html",data)
+    return render(request,"atp/test_case.html",data)
 
 
 @login_required
@@ -618,7 +618,7 @@ def test_suite(request):
         data= {
             "pages": get_paginator(request, test_suite), # 返回分页
         }
-        return render(request,"test_suite.html",data)
+        return render(request,"atp/test_suite.html",data)
     elif request.method== "POST":
     # 点击执行后，生成集合执行记录，集合执行记录包含用例执行记录
         suite_name= request.POST.get("suite_name")
@@ -642,7 +642,7 @@ def test_suite(request):
                 suites= TestSuite.objects.filter(suite_desc__contains= suite_name, status=0).order_by("-create_time")
             data["pages"]= get_paginator(request, suites)
             data["suite_name"]= suite_name
-            return render(request, "test_suite.html", data)
+            return render(request, "atp/test_suite.html", data)
         else:
             env= request.POST.get("env")
             test_suite_list= request.POST.getlist("testsuite_list")
@@ -652,7 +652,7 @@ def test_suite(request):
                 data= {
                     "pages": get_paginator(request, test_suite),  # 返回分页
                 }
-                return render(request, "test_suite.html", data)
+                return render(request, "atp/test_suite.html", data)
             else:
                 if JobExecuted.objects.filter(job_id= "test_job1_%s"%ex_time).first():
                     pass # 解决重复任务名的问题
@@ -686,7 +686,7 @@ def add_case_into_suite(request,suiteid):
         data= {
             "pages": get_paginator(request, test_cases)
         }
-        return render(request, "add_case_into_suite.html", data)
+        return render(request, "atp/add_case_into_suite.html", data)
 
     elif request.method== "POST":
         data= {
@@ -721,7 +721,7 @@ def view_or_delete_cases_in_suite(request,suiteid):
         data= {
             "pages": get_paginator(request, test_cases)
         }
-        return render(request, "view_or_delete_cases_in_suite.html", data)
+        return render(request, "atp/view_or_delete_cases_in_suite.html", data)
 
     elif request.method== "POST":
         data= {
@@ -758,7 +758,7 @@ def test_execute(request,jobid):
         data= {
             "pages": get_paginator(request, test_execute1),  # 返回分页
         }
-    return render(request, "test_execute.html", data)
+    return render(request, "atp/test_execute.html", data)
 
 
 @login_required
@@ -793,21 +793,21 @@ def test_case_execute_record(request,id):
     data= {
         "pages": get_paginator(request, test_case_execute_records), # 返回分页
     }
-    return render(request,"test_case_execute_records.html",data)
+    return render(request,"atp/test_case_execute_records.html",data)
 
 
 @login_required
 def test_execute_show_exception(request,execute_id):
     '''执行结果-用例错误信息查看'''
     tcer= TestCaseExecuteResult.objects.get(id= execute_id)
-    return render(request, "test_execute_show_exception.html", {"exception_info": tcer.exception_info})
+    return render(request, "atp/test_execute_show_exception.html", {"exception_info": tcer.exception_info})
 
 
 @login_required
 def testsuite_execute_show_exception(request,execute_id):
     '''执行结果-集合用例错误信息查看'''
     tcer= TestSuiteTestCaseExecuteRecord.objects.get(id= execute_id)
-    return render(request, "test_execute_show_exception.html", {"exception_info": tcer.exception_info})
+    return render(request, "atp/test_execute_show_exception.html", {"exception_info": tcer.exception_info})
 
 
 @login_required
@@ -823,7 +823,7 @@ def test_suite_execute_record(request,id,statistics):
     data= {
         "pages": get_paginator(request, test_suite_execute_records), # 返回分页
     }
-    return render(request,"test_suite_execute_records.html",data)
+    return render(request,"atp/test_suite_execute_records.html",data)
 
 
 @login_required
@@ -841,7 +841,7 @@ def test_suite_test_case_execute_record(request,id):
         "fail":fail,
         "records":records
     }
-    return render(request,"test_suite_test_case_execute_records.html",data)
+    return render(request,"atp/test_suite_test_case_execute_records.html",data)
 
 
 @login_required
@@ -862,7 +862,7 @@ def test_suite_statistics(request,suite_id):
         "fail":fail
     }
 
-    return render(request,"test_suite_statistics.html",data)
+    return render(request,"atp/test_suite_statistics.html",data)
 
 
 @login_required
@@ -891,7 +891,7 @@ def module_test_case_statistics(request,module_id):
         "success":success,
         "fail":fail,
     }
-    return render(request, "module_test_case_statistics.html", data)
+    return render(request, "atp/module_test_case_statistics.html", data)
 
 
 @login_required
@@ -922,7 +922,7 @@ def project_test_case_statistics(request,project_id):
         "project":project
 
     }
-    return render(request, "project_test_case_statistics.html", data)
+    return render(request, "atp/project_test_case_statistics.html", data)
 
 
 @login_required
@@ -950,7 +950,7 @@ def job_execute(request):
         "pages": get_paginator(request, jobs),  # 返回分页
         "job_name": job_name,
     }
-    return render(request, "job_execute.html", data)
+    return render(request, "atp/job_execute.html", data)
 
 
 @login_required

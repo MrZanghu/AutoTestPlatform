@@ -1,10 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'atp/base.html' %}
 {% load static %}
-{% block title %}用例集添加用例{% endblock %}
+{% block title %}删除测试用例{% endblock %}
 {% block content %}
     <form action="" method="POST">
         {% csrf_token %}
-        <input type="submit" id="add_to_suite" value='添加测试用例' onclick="return addToSuite()"/>
+        <input type="submit" id="delete_from_suite" value='删除测试用例' onclick="return deleteFromSuite()"/>
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
@@ -57,5 +57,5 @@
 
 {% block ext_js %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'js/add_case_into_suite.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/atp/view_or_delete_cases_in_suite.js' %}"></script>
 {% endblock %}

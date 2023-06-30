@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'atp/base.html' %}
 {% load static %}
 {% block title %}添加用例{% endblock %}
 
@@ -140,5 +140,5 @@
 
 {% block ext_js %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'js/add_test_case.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/atp/add_test_case.js' %}"></script>
 {% endblock %}

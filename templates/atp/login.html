@@ -1,8 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'atp/base.html' %}
 {% load static %}
 {% block title %}登录{% endblock %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/atp/login.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -41,5 +41,5 @@
 
 {% block ext_js %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/atp/login.js' %}"></script>
 {% endblock %}

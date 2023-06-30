@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'atp/base.html' %}
 {% load static %}
 {% block title %}项目执行统计{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/test_case.css' %}">
+    <link rel="stylesheet" href="{% static 'css/atp/test_case.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -12,7 +12,7 @@
     <p>
     <div id="main" style="width: 600px;height:400px; margin-left: 10px;"></div>
     {#    <script type="text/javascript" src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>#}
-    <script type="text/javascript" src="{% static 'js/echarts.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/atp/echarts.min.js' %}"></script>
     <script>
         echarts.init(document.getElementById('main')).setOption({
             series: {

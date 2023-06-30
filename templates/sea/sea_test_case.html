@@ -1,15 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'atp/base.html' %}
 {% load static %}
 {% block title %}测试用例{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/test_case.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sea/sea_test_case.css' %}">
 {% endblock %}
 
 {% block content %}
     <div id="group">
         <div id="search">
-            <form action="{% url 'main_platform:test_case' %}" method="POST">
+            <form action="#" method="POST">
                 {% csrf_token %}
                 <input style="margin-left: 5px;" type="text" name="case_name" value="{{ case_name }}"
                        placeholder="输入用例名称">
@@ -19,17 +19,17 @@
 
         <div id="load">
             <div id="addcase">
-                <a href="{% url 'main_platform:add_test_case' %}">添加测试用例</a>
+                <a href="{% url 'selenium_apps:add_test_case' %}">添加测试用例</a>
             </div>
 
             <div id="downloads">
                 <form action="">
-                    <a type="button" href="{% url 'main_platform:down_test_template' %}">下载模板文件</a>
+                    <a type="button" href="#">下载模板文件</a>
                 </form>
             </div>
 
             <div id="uploads">
-                <form action="{% url 'main_platform:up_test_template' %}" method="post" enctype="multipart/form-data">
+                <form action="#" method="post" enctype="multipart/form-data">
                     <div class="upload-btn-wrapper">
                         {% csrf_token %}
                         <button class="btn">选择模板文件</button>
@@ -60,10 +60,12 @@
                 <thead>
                 <tr>
                     <th width="5%"><input type="checkbox" id="all_select" onclick="selectOrCancelAll();"/>全选</th>
-                    <th width="8.75%">用例名称</th>
-                    <th width="8.75%">操作步骤</th>
-                    <th width="8.75%">创建时间</th>
-                    <th width="8.75%">创建人</th>
+                    <th width="15%">用例名称</th>
+                    <th width="15%">所属项目</th>
+                    <th width="15%">所属模块</th>
+                    <th width="15%">创建人员</th>
+                    <th width="15%">创建时间</th>
+                    <th width="15%">更新时间</th>
                     <th width="5%">操作</th>
                 </tr>
                 </thead>
@@ -73,15 +75,15 @@
                     <tr>
                         <td><input type="checkbox" value="{{ test_case.id }}" name="testcases_list"> {{ test_case.id }}
                         </td>
-                        <td>
-                            <a href="" target="_blank">{{ test_case.case_name }}</a>
-                        </td>
-                        <td>{{ test_case.step }}</td>
+                        <td><a href="{% url 'selenium_apps:test_case_detail' test_case.id %}">{{ test_case.case_name }}</a></td>
+                        <td>{{ test_case.case_name }}</td>
+                        <td>{{ test_case.create_time }}</td>
                         <td>{{ test_case.create_time }}</td>
                         <td>{{ test_case.user }}</td>
+                        <td>{{ test_case.create_time }}</td>
                         <td>
-                            <a href="">修改</a>
-                            <a href="">删除</a>
+                            <a href="{% url 'selenium_apps:update_test_case' test_case.id %}">修改</a>
+                            <a href="{% url 'selenium_apps:delete_test_case' test_case.id %}">删除</a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -113,5 +115,5 @@
 
 {% block ext_js %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'js/test_case.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sea/sea_test_case.js' %}"></script>
 {% endblock %}

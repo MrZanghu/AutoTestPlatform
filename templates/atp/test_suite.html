@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'atp/base.html' %}
 {% load static %}
 {% block title %}用例集合{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/test_suite.css' %}">
+    <link rel="stylesheet" href="{% static 'css/atp/test_suite.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -89,5 +89,5 @@
 
 {% block ext_js %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'js/test_suite.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/atp/test_suite.js' %}"></script>
 {% endblock %}

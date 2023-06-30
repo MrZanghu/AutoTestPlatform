@@ -8,7 +8,7 @@
     <title>{% block title %}base{% endblock %}</title>
 
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/atp/base.css' %}" rel="stylesheet">
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     {% block css %}
@@ -34,7 +34,8 @@
             <ul class="nav navbar-nav navbar-left">
                 <li class="active"><a href="{% url 'main_platform:project' %}">测试项目</a></li>
                 <li class="active"><a href="{% url 'main_platform:module' %}">测试模块</a></li>
-                <li class="active"><a href="{% url 'main_platform:test_case' %}">测试用例</a></li>
+                <li class="active"><a href="{% url 'main_platform:test_case' %}">接口用例</a></li>
+                <li class="active"><a href="{% url 'selenium_apps:test_case' %}">网页UI用例</a></li>
                 <li class="active"><a href="{% url 'main_platform:test_suite' %}">用例集合</a></li>
                 <li class="active"><a href="{% url 'main_platform:test_execute' 'None' %}">执行结果</a></li>
                 <li class="active"><a href="{% url 'main_platform:job_execute' %}">定时任务</a></li>
@@ -57,7 +58,7 @@
 
 
 {% block ext_js %}
-    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'js/atp/jquery-3.4.1.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 {% endblock %}
 

@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'atp/base.html' %}
 {% load static %}
 {% block title %}测试用例{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/test_case.css' %}">
+    <link rel="stylesheet" href="{% static 'css/atp/test_case.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -65,11 +65,11 @@
                     <th width="8.75%">所属模块</th>
                     <th width="8.75%">接口地址</th>
                     <th width="5%">请求方式</th>
-                    <th width="12.5%">请求数据</th>
+                    <th width="10.5%">请求数据</th>
                     <th width="8.75%">断言key</th>
                     <th width="8.75%">关联用例ID</th>
                     <th width="20%">提取变量表达式</th>
-                    <th width="5%">操作</th>
+                    <th width="7%">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -123,5 +123,5 @@
 
 {% block ext_js %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'js/test_case.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/atp/test_case.js' %}"></script>
 {% endblock %}

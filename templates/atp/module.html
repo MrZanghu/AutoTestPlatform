@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'atp/base.html' %}
 {% load static %}
-{% block title %}测试项目{% endblock %}
+{% block title %}测试模块{% endblock %}
 
 {% block content %}
-<form action="{% url 'main_platform:project'%}" method="POST">
+<form action="{% url 'main_platform:module'%}" method="POST">
     {% csrf_token %}
     <input style="margin-left: 5px;" type="text" name="proj_name" value="{{ proj_name }}" placeholder="输入项目名称">
     <input type="submit" value="搜索">
@@ -13,12 +13,10 @@
     <table class="table table-striped">
         <thead>
         <tr>
-{#            <th>id</th>#}
-            <th>项目名称</th>
-            <th>项目负责人</th>
+            <th>模块名称</th>
+            <th>所属项目</th>
             <th>测试负责人</th>
-            <th>开发负责人</th>
-            <th>简要描述</th>
+            <th>模块描述</th>
             <th>创建时间</th>
             <th>更新时间</th>
             <th>测试结果统计</th>
@@ -26,19 +24,18 @@
         </thead>
         <tbody>
 
-        {% for project in pages %}
+        {% for module in pages %}
         <tr>
-{#            <td>{{ project.id }}</td>#}
-            <td>{{ project.name }}</td>
-            <td>{{ project.proj_owner }}</td>
-            <td>{{ project.test_owner }}</td>
-            <td>{{ project.dev_owner }}</td>
-            <td>{{ project.desc }}</td>
-            <td>{{ project.create_time|date:"Y-n-d H:i:s" }}</td>
-            <td>{{ project.update_time|date:"Y-n-d H:i:s" }}</td>
-            <td><a href="{% url 'main_platform:project_test_case_statistics' project.id %}"> 查看</a></td>
+            <td><a href="{% url 'main_platform:module_test_case' module.id %} " target="_blank">{{ module.name }}</a></td>
+            <td>{{ module.belong_project.name }}</td>
+            <td>{{ module.test_owner }}</td>
+            <td>{{ module.desc }}</td>
+            <td>{{ module.create_time|date:"Y-n-d H:i:s" }}</td>
+            <td>{{ module.update_time|date:"Y-n-d H:i:s" }}</td>
+            <td><a href="{% url 'main_platform:module_test_case_statistics' module.id %}">查看</a></td>
         </tr>
         {% endfor %}
+
         </tbody>
     </table>
 </div>
@@ -52,7 +49,7 @@
                 {% endif %}
 
                 <span class="current">
-                        第 {{ pages.number }} 页 / 共 {{ pages.paginator.num_pages }} 页</span>
+                    第 {{ pages.number }} 页 / 共 {{ pages.paginator.num_pages }} 页</span>
 
                 {% if pages.has_next %}
                 <a class='active' href="?page={{ pages.next_page_number }}">下一页</a>
