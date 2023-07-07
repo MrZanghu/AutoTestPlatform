@@ -182,13 +182,18 @@ LOGGING= {
             'level':'DEBUG',
             'formatter':'simple',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename':os.path.join(LOGGING_DIR,'celery.log'),
+            'filename':os.path.join(LOGGING_DIR,'ATP.log'),
             'maxBytes':1024 * 1024 * 10,
             'backupCount':3,
         },
     },
     'loggers':{
         'main_platform':{
+            'handlers':['console','celery'],
+            'propagate':True,
+            'level':'DEBUG',
+        },
+        'selenium_apps':{
             'handlers':['console','celery'],
             'propagate':True,
             'level':'DEBUG',

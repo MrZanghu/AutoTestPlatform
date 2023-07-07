@@ -15,4 +15,6 @@ urlpatterns= [
     path(r'update_test_case_interface/', views.update_test_case_interface,name= "update_test_case_interface"),
 
     re_path(r'^delete_test_case/(?P<caseid>\d+)/', views.delete_test_case, name="delete_test_case"),
+
+    path(r'test_case/sea/get_job_name/',views.get_job_name, name= "get_job_name"),
 ]

@@ -244,6 +244,7 @@ def synchronous_jobs():
 
 @csrf_exempt
 def get_job_name(request):
+    '''获取任务名称，判断是否重复'''
     ex_time= request.GET.get("ex_time")
     type= request.GET.get("type")
     if ex_time== "":
@@ -336,7 +337,7 @@ def test_case(request):
         case_name= request.POST.get("case_name")
         ex_case= request.POST.get("ex_case") # 判断是否执行用例的关键字
         ex_time= request.POST.get("ex_time") # 判断执行时间的关键字
-        if ex_time== "":
+        if ex_time in ("",None):
             ex_time= (datetime.datetime.now()+datetime.timedelta(minutes=1)).strftime("%Y-%m-%dT%H:%M")
         year= ex_time[:4]
         month= ex_time[5:7]
@@ -360,7 +361,7 @@ def test_case(request):
             test_case_list= request.POST.getlist("testcases_list")
             if len(test_case_list)== 0:
                 # 解决传空用例的问题
-                cases= TestCase.objects.filter(status=0).order_by("-create_time")  # 根据创建时间倒序
+                cases= TestCase.objects.filter(status= 0).order_by("-create_time")  # 根据创建时间倒序
                 data= {}
                 data["pages"]= get_paginator(request, cases)
                 data["case_name"]= ""

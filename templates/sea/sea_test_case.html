@@ -9,7 +9,7 @@
 {% block content %}
     <div id="group">
         <div id="search">
-            <form action="#" method="POST">
+            <form action="{% url 'selenium_apps:test_case' %}" method="POST">
                 {% csrf_token %}
                 <input style="margin-left: 5px;" type="text" name="case_name" value="{{ case_name }}"
                        placeholder="输入用例名称">
@@ -76,11 +76,11 @@
                         <td><input type="checkbox" value="{{ test_case.id }}" name="testcases_list"> {{ test_case.id }}
                         </td>
                         <td><a href="{% url 'selenium_apps:test_case_detail' test_case.id %}">{{ test_case.case_name }}</a></td>
-                        <td>{{ test_case.case_name }}</td>
-                        <td>{{ test_case.create_time }}</td>
-                        <td>{{ test_case.create_time }}</td>
+                        <td>所属项目后期加</td>
+                        <td>所属项目后期加</td>
                         <td>{{ test_case.user }}</td>
                         <td>{{ test_case.create_time }}</td>
+                        <td>更新时间后期加</td>
                         <td>
                             <a href="{% url 'selenium_apps:update_test_case' test_case.id %}">修改</a>
                             <a href="{% url 'selenium_apps:delete_test_case' test_case.id %}">删除</a>

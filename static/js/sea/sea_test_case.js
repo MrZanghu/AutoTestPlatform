@@ -21,7 +21,7 @@ function ischecked() {
     var $ex_time = document.getElementsByName("ex_time").item(0).value;
 
     if ($ex_case) {
-        $.getJSON("/atp/test_case/atp/get_job_name/", {"ex_time": $ex_time, "type": 0}, function (data) {
+        $.getJSON("/sea/test_case/sea/get_job_name/", {"ex_time": $ex_time, "type": 0}, function (data) {
             if (data["status"] === 2001) {
                 alert("可能存在同名任务，请一分钟后再试");
                 // 重复任务但未勾选用例的情况，导致判重与勾选判断相互调用，以判重优先

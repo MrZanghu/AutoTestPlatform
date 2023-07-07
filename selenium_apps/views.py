@@ -1,8 +1,13 @@
+import datetime
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator
 from selenium_apps.models import TestCaseForSEA,TestCaseSteps
+from main_platform.views import get_server_address
+from main_platform.models import JobExecuted
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from selenium_apps.tasks import case_task
 
 
 
@@ -17,6 +22,21 @@ def get_paginator(request,data):
     return pp
 
 
+@csrf_exempt
+def get_job_name(request):
+    '''获取任务名称，判断是否重复'''
+    ex_time= request.GET.get("ex_time")
+    type= request.GET.get("type")
+    if ex_time== "":
+        ex_time= (datetime.datetime.now() + datetime.timedelta(minutes= 1)).strftime("%Y-%m-%dT%H:%M")
+    job_name= "test_UI_job%s_%s"%(str(type),ex_time)
+    try:
+        jbe= JobExecuted.objects.get(job_id= job_name)
+        return JsonResponse({"msg":"存在相同任务名%s"%jbe,"status":2001})
+    except:
+        return JsonResponse({"msg": "不存在相同任务名", "status": 2000})
+
+
 @login_required
 def test_case(request):
     '''主页-测试用例列表'''
@@ -28,8 +48,64 @@ def test_case(request):
         return render(request, "sea/sea_test_case.html", data)
 
     elif request.method== "POST":
-        # 查询时候在写
-        pass
+        case_name= request.POST.get("case_name")
+        ex_case= request.POST.get("ex_case") # 判断是否执行用例的关键字
+        ex_time= request.POST.get("ex_time") # 判断执行时间的关键字
+
+        if ex_time in ("",None):
+            ex_time= (datetime.datetime.now()+datetime.timedelta(minutes=1)).strftime("%Y-%m-%dT%H:%M")
+        year= ex_time[:4]
+        month= ex_time[5:7]
+        day= ex_time[8:10]
+        hour= ex_time[11:13]
+        minute= ex_time[14:]
+        data= {}
+
+        if not ex_case:
+            # 如果不是进行执行操作
+            if case_name in [None, ""]:
+                case_name= ""
+                cases= TestCaseForSEA.objects.filter(status= 0).order_by("-create_time")
+            else:
+                cases= TestCaseForSEA.objects.filter(case_name__contains= case_name,status= 0).order_by("-create_time")
+            data["pages"]= get_paginator(request, cases)
+            data["case_name"]= case_name
+            return render(request, "sea/sea_test_case.html", data)
+
+        else:
+            env= request.POST.get("env")
+            test_case_list= request.POST.getlist("testcases_list")
+
+            if len(test_case_list)== 0:
+                # 解决传空用例的问题
+                cases= TestCaseForSEA.objects.filter(status=0).order_by("-create_time")  # 根据创建时间倒序
+                data= {}
+                data["pages"]= get_paginator(request, cases)
+                data["case_name"]= ""
+                return render(request, "sea/sea_test_case.html", data)
+            else:
+                if JobExecuted.objects.filter(job_id= "test_UI_job0_%s"%ex_time).first():
+                    pass # 解决重复任务名的问题
+                else:
+
+                    test_case_list = [int(x) for x in test_case_list]
+                    test_case_list.sort()  # 将id转化成int后排序
+
+                    env= get_server_address(env)
+
+                    case_task(test_case_list,env,request.user,id= '1231231231')
+                    return render(request, "sea/sea_test_case.html", data)
+
+
+
+        #             register_jobs(test_case_list,env,request.user.username,0,"test_job0_%s"%ex_time,
+        #                           year,month,day,hour,minute)
+        #             jbe= JobExecuted()  # 记录定时任务
+        #             jbe.job_id= "test_job0_%s" % ex_time
+        #             jbe.user= request.user.username
+        #             jbe.status= 0
+        #             jbe.save()
+        #         return redirect(reverse("main_platform:test_execute",kwargs= {"jobid":"None"}))
 
 
 @login_required
@@ -61,7 +137,10 @@ def test_case_detail(request,caseid):
 
 @login_required
 def add_test_case(request):
-    '''测试用例-新增用例页面'''
+    '''
+    测试用例-新增用例页面，
+    关联项目和模块，这个功能暂时不需要，后期再加
+    '''
     if request.method== "GET":
         # 提交表单时获取不到数据，所以通过接口add_test_case_interface来新增
         return render(request, "sea/sea_add_test_case.html",{})
@@ -194,7 +273,3 @@ def delete_test_case(request,caseid):
     data= {}
     data["pages"]= get_paginator(request, cases)
     return render(request, "sea/sea_test_case.html", data)
-
-
-
-1.新增用例的详情，可以管理项目和模块
